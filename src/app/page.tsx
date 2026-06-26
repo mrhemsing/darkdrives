@@ -143,7 +143,7 @@ export default function Home() {
           <div className="mt-6 flex flex-col justify-between gap-5 md:flex-row md:items-end">
             <div>
               <h2 className="font-display text-5xl uppercase leading-none">
-                Open a file tonight.
+                Download the dark.
               </h2>
               <p className="mt-5 max-w-2xl text-bone-dim">
                 Regina, Lethbridge, and Ohio are GPS guides: buy, download,
