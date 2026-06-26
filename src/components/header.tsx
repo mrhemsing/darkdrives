@@ -14,7 +14,7 @@ export function Header() {
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-5 sm:px-8">
         <Link
           href="/"
-          className="logo-flicker logo-flicker-header font-display text-[2.44rem] uppercase leading-none sm:text-[3.17rem]"
+          className="logo-flicker logo-flicker-header font-display text-[2.44rem] uppercase leading-none sm:text-[2.85rem]"
         >
           Dark Drives
         </Link>
