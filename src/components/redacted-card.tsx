@@ -1,8 +1,7 @@
 import type { TeaserCard } from "@/data/tours";
+import { SignalPlayer } from "@/components/signal-player";
 
 export function RedactedCard({ teaser }: { teaser: TeaserCard }) {
-  const captionSrc = teaser.audioSrc?.replace(/\.mp3$/, ".vtt");
-
   return (
     <article className="min-h-56 border border-ash-line bg-background/80 p-5">
       <div className="flex items-center gap-2 border-b border-ash-line pb-4 font-mono text-xs">
@@ -14,11 +13,12 @@ export function RedactedCard({ teaser }: { teaser: TeaserCard }) {
       </div>
       <p className="mt-6 font-mono text-lg leading-8 text-bone">{teaser.hook}</p>
       {teaser.audioSrc ? (
-        <audio className="mt-5 w-full" controls preload="none" src={teaser.audioSrc}>
-          {captionSrc ? (
-            <track kind="captions" src={captionSrc} srcLang="en" label="English" />
-          ) : null}
-        </audio>
+        <SignalPlayer
+          audioSrc={teaser.audioSrc}
+          label="Preview signal"
+          description="Press play. The bars move with the file."
+          className="mt-5"
+        />
       ) : null}
       <div className="mt-7 space-y-2">
         <span className="redacted min-w-40" />

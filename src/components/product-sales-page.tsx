@@ -11,12 +11,12 @@ import { CheckoutStatus } from "@/components/checkout-status";
 import { HowItWorksCard } from "@/components/how-it-works-card";
 import { PageHero } from "@/components/page-hero";
 import { RedactedCard } from "@/components/redacted-card";
+import { SignalPlayer } from "@/components/signal-player";
 import { TeaserMap } from "@/components/teaser-map";
 import { TourCta } from "@/components/tour-cta";
 import type { Tour } from "@/data/tours";
 
 export function ProductSalesPage({ product }: { product: Tour }) {
-  const trailerCaptionSrc = product.trailerAudio?.replace(/\.mp3$/, ".vtt");
   const availability =
     product.status === "preorder"
       ? "https://schema.org/PreOrder"
@@ -174,16 +174,12 @@ export function ProductSalesPage({ product }: { product: Tour }) {
                 </div>
               </div>
               {product.trailerAudio ? (
-                <audio className="mt-5 w-full" controls preload="none" src={product.trailerAudio}>
-                  {trailerCaptionSrc ? (
-                    <track
-                      kind="captions"
-                      src={trailerCaptionSrc}
-                      srcLang="en"
-                      label="English"
-                    />
-                  ) : null}
-                </audio>
+                <SignalPlayer
+                  audioSrc={product.trailerAudio}
+                  label="Preview signal"
+                  description="Press play. The bars move with the file."
+                  className="mt-5"
+                />
               ) : (
                 <div className="mt-5">
                   <div className="flex h-24 items-end gap-1 overflow-hidden border border-ash-line bg-paper p-3">
