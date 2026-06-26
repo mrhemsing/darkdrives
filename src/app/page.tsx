@@ -81,14 +81,18 @@ export default function Home() {
               {tour.stopCountDisplay}. Citywide. None of them marked here are
               exactly where they are.
             </p>
-            <div className="metric-grid mt-7">
+            <div className="mt-7 grid grid-cols-3 gap-3">
               {tour.categoryStats.slice(0, 3).map((stat) => (
                 <div
                   key={stat.category}
-                  className="metric-card"
+                  className="min-w-0 border border-ash-line bg-background/40 p-3 sm:p-4"
                 >
-                  <p className="metric-card-value">{stat.count}</p>
-                  <p className="metric-card-label">{stat.category}</p>
+                  <p className="font-display text-[2.6rem] leading-none text-blood-hot sm:text-4xl">
+                    {stat.count}
+                  </p>
+                  <p className="mt-2 break-words font-mono text-[0.56rem] uppercase leading-tight text-ash sm:text-xs">
+                    {stat.category}
+                  </p>
                 </div>
               ))}
             </div>

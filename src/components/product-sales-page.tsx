@@ -90,14 +90,18 @@ export function ProductSalesPage({ product }: { product: Tour }) {
               </div>
             ))}
           </div>
-          <div className="metric-grid mt-8">
+          <div className="mt-8 grid grid-cols-3 gap-3 sm:gap-4">
             {product.categoryStats.map((stat) => (
               <div
                 key={stat.category}
-                className="metric-card bg-background"
+                className="min-w-0 border border-ash-line bg-background p-3 sm:p-5"
               >
-                <p className="metric-card-value">{stat.count}</p>
-                <p className="metric-card-label">{stat.category}</p>
+                <p className="font-display text-[2.6rem] leading-none text-blood-hot sm:text-5xl">
+                  {stat.count}
+                </p>
+                <p className="mt-2 break-words font-mono text-[0.56rem] uppercase leading-tight text-ash sm:text-xs">
+                  {stat.category}
+                </p>
               </div>
             ))}
           </div>
