@@ -32,7 +32,7 @@ export default function Home() {
           <p className="font-mono text-xs uppercase tracking-[0.34em] text-sick">
             Off Grid Sask presents
           </p>
-          <h1 className="mt-5 max-w-4xl font-display text-6xl uppercase leading-none text-bone sm:text-8xl lg:text-9xl">
+          <h1 className="mt-5 max-w-3xl font-display text-5xl uppercase leading-none text-bone sm:text-7xl lg:text-8xl">
             Everything you are about to hear happened here.
           </h1>
           <p className="mt-6 max-w-xl text-base leading-7 text-bone-dim sm:text-lg">
