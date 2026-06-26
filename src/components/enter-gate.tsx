@@ -19,7 +19,10 @@ export function EnterGate() {
             Every drive has a dark side.
           </p>
           <p className="mt-8 text-xl leading-8 text-bone">
-            This is meant to be heard. Turn your sound on.
+            <span>This is meant to be heard.</span>
+            <br className="sm:hidden" />
+            <span className="hidden sm:inline"> </span>
+            <span>Turn your sound on.</span>
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
             <button
