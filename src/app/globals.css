@@ -103,7 +103,7 @@ a {
 }
 
 .flicker {
-  animation: flicker 4.8s linear infinite;
+  animation: flicker 13.7s linear infinite;
   will-change: opacity, filter, text-shadow;
 }
 
@@ -137,81 +137,109 @@ a {
 @keyframes flicker {
   0% {
     opacity: 1;
-    filter: brightness(1.05);
+    filter: brightness(1.04);
     text-shadow:
       0 0 10px rgba(179, 0, 15, 0.32),
       0 0 28px rgba(179, 0, 15, 0.18);
   }
-  2% {
-    opacity: 0.42;
-    filter: brightness(0.7);
-    text-shadow: none;
-  }
-  3%,
-  7% {
+  18% {
     opacity: 1;
-    filter: brightness(1.16);
+    filter: brightness(1.04);
     text-shadow:
-      0 0 16px rgba(179, 0, 15, 0.45),
-      0 0 38px rgba(179, 0, 15, 0.24);
+      0 0 10px rgba(179, 0, 15, 0.32),
+      0 0 28px rgba(179, 0, 15, 0.18);
   }
-  8% {
-    opacity: 0.18;
-    filter: brightness(0.55);
+  18.5% {
+    opacity: 0.72;
+    filter: brightness(0.86);
     text-shadow: none;
   }
-  9%,
-  21% {
-    opacity: 0.96;
-    filter: brightness(1);
-  }
-  22% {
-    opacity: 0.58;
-    filter: brightness(0.8);
-    text-shadow: none;
-  }
-  23%,
-  44% {
+  18.9% {
     opacity: 1;
-    filter: brightness(1.08);
+    filter: brightness(1.11);
+    text-shadow:
+      0 0 13px rgba(179, 0, 15, 0.38),
+      0 0 32px rgba(179, 0, 15, 0.2);
+  }
+  19.5% {
+    opacity: 0.48;
+    filter: brightness(0.76);
+    text-shadow: none;
+  }
+  20.1%,
+  43% {
+    opacity: 1;
+    filter: brightness(1.04);
+    text-shadow:
+      0 0 10px rgba(179, 0, 15, 0.32),
+      0 0 28px rgba(179, 0, 15, 0.18);
+  }
+  43.3% {
+    opacity: 0.64;
+    filter: brightness(0.82);
+    text-shadow: none;
+  }
+  43.7%,
+  44.2% {
+    opacity: 1;
+    filter: brightness(1.12);
+    text-shadow:
+      0 0 13px rgba(179, 0, 15, 0.38),
+      0 0 32px rgba(179, 0, 15, 0.2);
+  }
+  44.8% {
+    opacity: 0.78;
+    filter: brightness(0.9);
+    text-shadow: none;
+  }
+  45.4%,
+  71% {
+    opacity: 1;
+    filter: brightness(1.04);
+    text-shadow:
+      0 0 10px rgba(179, 0, 15, 0.32),
+      0 0 28px rgba(179, 0, 15, 0.18);
+  }
+  71.2% {
+    opacity: 0.86;
+    filter: brightness(0.94);
+    text-shadow: none;
+  }
+  71.5% {
+    opacity: 1;
+    filter: brightness(1.09);
     text-shadow:
       0 0 12px rgba(179, 0, 15, 0.34),
       0 0 30px rgba(179, 0, 15, 0.18);
   }
-  45% {
-    opacity: 0.68;
-    filter: brightness(0.75);
-    text-shadow: none;
-  }
-  46% {
-    opacity: 0.22;
-  }
-  47%,
-  53% {
-    opacity: 1;
-    filter: brightness(1.18);
-    text-shadow:
-      0 0 18px rgba(179, 0, 15, 0.48),
-      0 0 44px rgba(179, 0, 15, 0.26);
-  }
-  54% {
-    opacity: 0.8;
-    filter: brightness(0.9);
-  }
-  55%,
-  76% {
+  86% {
     opacity: 1;
     filter: brightness(1.04);
+    text-shadow:
+      0 0 10px rgba(179, 0, 15, 0.32),
+      0 0 28px rgba(179, 0, 15, 0.18);
   }
-  77% {
-    opacity: 0.38;
-    filter: brightness(0.68);
+  86.4% {
+    opacity: 0.58;
+    filter: brightness(0.78);
     text-shadow: none;
   }
-  78%,
+  86.9% {
+    opacity: 1;
+    filter: brightness(1.13);
+    text-shadow:
+      0 0 13px rgba(179, 0, 15, 0.38),
+      0 0 32px rgba(179, 0, 15, 0.2);
+  }
+  87.4% {
+    opacity: 0.72;
+    filter: brightness(0.86);
+    text-shadow: none;
+  }
+  88%,
   100% {
     opacity: 1;
-    filter: brightness(1.08);
+    filter: brightness(1.04);
     text-shadow:
       0 0 10px rgba(179, 0, 15, 0.32),
       0 0 28px rgba(179, 0, 15, 0.18);
