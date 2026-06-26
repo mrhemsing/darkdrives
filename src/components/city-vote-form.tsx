@@ -29,7 +29,7 @@ export function CityVoteForm({ defaultCity }: { defaultCity: string }) {
     }
     setStatus(
       data.ok
-        ? "Logged. If the file opens, you will hear first."
+        ? "Your vote is counted. We will be in touch after dark."
         : data.error ?? "Try again.",
     );
   }
@@ -81,7 +81,7 @@ export function CityVoteForm({ defaultCity }: { defaultCity: string }) {
       </label>
       <button className="mt-5 inline-flex h-11 w-full items-center justify-center gap-2 rounded-sm bg-blood px-4 font-mono text-xs uppercase text-bone transition hover:bg-blood-hot">
         <Send size={16} aria-hidden />
-        Vote to summon
+        Summon this city
       </button>
       {status ? <p className="mt-4 font-mono text-xs text-sick">{status}</p> : null}
     </form>

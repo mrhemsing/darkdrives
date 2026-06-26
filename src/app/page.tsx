@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, MapPin, Radio, Volume2 } from "lucide-react";
+import { ArrowRight, MapPin, Radio, Video } from "lucide-react";
 import { CityVoteForm } from "@/components/city-vote-form";
 import { EnterGate } from "@/components/enter-gate";
 import { RedactedCard } from "@/components/redacted-card";
@@ -26,11 +26,12 @@ export default function Home() {
             <span className="flicker block text-blood-hot">Dark Drives</span>
           </h1>
           <p className="mt-6 max-w-2xl text-2xl font-semibold leading-tight text-bone sm:text-4xl">
-            Everything you are about to hear happened here. Get in the car.
+            Everything you are about to hear happened here.
           </p>
           <p className="mt-6 max-w-xl text-base leading-7 text-bone-dim sm:text-lg">
-            A self-guided audio driving tour through the haunted, cursed, and
-            true-crime files Saskatoon leaves out of the brochure.
+            You have driven past all of it. You just never knew. The Dark Side
+            of Saskatoon is a self-guided audio tour you run after dark. Real
+            places. Real records. One city you thought you knew.
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <Link
@@ -38,7 +39,7 @@ export default function Home() {
               className="inline-flex h-12 items-center justify-center gap-2 rounded-sm bg-blood px-5 font-mono text-sm uppercase text-bone transition hover:bg-blood-hot"
             >
               <ArrowRight size={18} aria-hidden />
-              Open the Saskatoon file
+              Take the drive
             </Link>
             <EnterGate />
           </div>
@@ -48,12 +49,12 @@ export default function Home() {
       <section className="border-b border-ash-line bg-paper/55 px-5 py-12 sm:px-8">
         <div className="mx-auto grid max-w-7xl gap-4 md:grid-cols-3">
           {[
-            ["Buy the file", "One city unlock. No booking. No lobby."],
-            ["Drive after dark", "Bring friends, a date, or the wrong person."],
-            ["Listen on site", "Narrated audio turns ordinary streets into evidence."],
+            ["Unlock", "Buy the tour once. It is yours for good."],
+            ["Drive", "Gather your bravest friends. Wait for dark. Follow the route."],
+            ["Listen", "Press play at every stop. Hear what the city buried."],
           ].map(([title, copy], index) => (
             <div key={title} className="border border-ash-line bg-background/70 p-5">
-              <p className="font-mono text-xs text-blood-hot">STEP 0{index + 1}</p>
+            <p className="font-mono text-xs text-blood-hot">0{index + 1}</p>
               <h2 className="mt-4 font-display text-3xl uppercase">{title}</h2>
               <p className="mt-3 text-sm leading-6 text-bone-dim">{copy}</p>
             </div>
@@ -65,15 +66,19 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <p className="font-mono text-xs uppercase tracking-[0.28em] text-sick">
-              City-wide signal
+              The map
             </p>
             <h2 className="mt-4 font-display text-5xl uppercase leading-none">
-              Forty plus reports. Zero revealed stops.
+              It is all around you.
             </h2>
             <p className="mt-5 text-bone-dim">
-              The map shows scale only. Every dot is a decoy, with no labels,
-              popups, real coordinates, or paid story content in the public
-              bundle.
+              Every dot suggests the shape of the tour without marking a real
+              stop. We moved the signal so you cannot cheat. Pay the toll and
+              we hand you the real ones.
+            </p>
+            <p className="mt-5 font-mono text-xs uppercase tracking-[0.18em] text-ash">
+              {tour.stopCountDisplay}. Citywide. None of them marked here are
+              exactly where they are.
             </p>
             <div className="mt-7 grid gap-3 sm:grid-cols-3">
               {tour.categoryStats.slice(0, 3).map((stat) => (
@@ -110,21 +115,66 @@ export default function Home() {
               <RedactedCard key={teaser.id} teaser={teaser} />
             ))}
           </div>
+          <div className="mt-10 border border-ash-line bg-background/70 p-5">
+            <p className="font-mono text-sm uppercase text-bone-dim">
+              {tour.stopCountDisplay.replace(" real locations", "")} more
+              files. All of them sealed until you take the drive.
+            </p>
+            <Link
+              href="/saskatoon#buy"
+              className="mt-4 inline-flex h-11 items-center justify-center gap-2 rounded-sm bg-blood px-4 font-mono text-xs uppercase text-bone transition hover:bg-blood-hot"
+            >
+              <ArrowRight size={16} aria-hidden />
+              Unlock the tour
+            </Link>
+          </div>
         </div>
       </section>
 
       <section className="px-5 py-20 sm:px-8">
+        <div className="mx-auto mb-20 max-w-7xl">
+          <p className="font-mono text-xs uppercase tracking-[0.28em] text-sick">
+            Reports from the road
+          </p>
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            {[
+              [
+                "We rolled the window down at the third stop like the audio said. Something rolled it back up.",
+                "submitted anonymously",
+              ],
+              [
+                "My friend laughed at the whole thing until stop eleven. He has not laughed about it since.",
+                "K, Saskatoon",
+              ],
+              [
+                "Do not do the cemetery one alone. That is all I will say.",
+                "received 2:14 a.m.",
+              ],
+            ].map(([quote, byline]) => (
+              <figure key={quote} className="border border-ash-line bg-paper p-5">
+                <blockquote className="text-lg leading-7 text-bone">
+                  {quote}
+                </blockquote>
+                <figcaption className="mt-5 font-mono text-xs uppercase text-ash">
+                  {byline}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1fr_0.8fr]">
           <div>
             <p className="font-mono text-xs uppercase tracking-[0.28em] text-sick">
               More cities
             </p>
             <h2 className="mt-4 font-display text-5xl uppercase leading-none">
-              Tell us where to haunt next.
+              Saskatoon is only the first.
             </h2>
             <p className="mt-5 max-w-2xl text-bone-dim">
-              Saskatoon opens the archive. Regina, Edmonton, Calgary, Winnipeg,
-              and Vancouver are waiting for demand to get loud enough.
+              The road does not end here. Tell us which city to haunt next.
+            </p>
+            <p className="mt-6 font-mono text-xl uppercase text-blood-hot">
+              Film your drive. If you make it through, tag it. #DarkDrives
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <span className="inline-flex items-center gap-2 border border-ash-line px-3 py-2 font-mono text-xs text-bone-dim">
@@ -136,8 +186,8 @@ export default function Home() {
                 Vote to summon
               </span>
               <span className="inline-flex items-center gap-2 border border-ash-line px-3 py-2 font-mono text-xs text-bone-dim">
-                <Volume2 size={14} aria-hidden />
-                Audio never autoplays
+                <Video size={14} aria-hidden />
+                Footage wanted
               </span>
             </div>
           </div>

@@ -15,6 +15,9 @@ export type Tour = {
   status: TourStatus;
   priceId?: string;
   priceDisplay: string;
+  launchSeason: string;
+  refundLine: string;
+  minimumAge: string;
   launchLabel?: string;
   durationEstimate: string;
   stopCountDisplay: string;
@@ -40,7 +43,10 @@ export const tours: Tour[] = [
     status: commerceMode === "live" ? "live" : "preorder",
     priceId: process.env.STRIPE_SASKATOON_PRICE_ID,
     priceDisplay: "$19 CAD",
-    launchLabel: "Founding pre-order",
+    launchSeason: "this fall",
+    refundLine: "Refundable until launch night.",
+    minimumAge: "18",
+    launchLabel: "Founding price $19 CAD. Launching this fall.",
     durationEstimate: "About 2 to 3 hours",
     stopCountDisplay: "40+ real locations",
     coverImage: "/images/saskatoon-night-road.svg",
@@ -64,32 +70,37 @@ export const tours: Tour[] = [
       {
         id: "true-crime-ditch",
         category: "TRUE CRIME",
-        hook: "A body in the ditch. A voice that still asks for help.",
+        hook:
+          "A man's body in the ditch. The case went cold. The voice still asking for help did not.",
       },
       {
         id: "cursed-corner",
         category: "CURSED GROUND",
-        hook: "Stand at the wrong corner and your shadow stops matching you.",
+        hook:
+          "Cross at this corner and check your shadow. It grows something it should not have.",
       },
       {
         id: "apparition-crossing",
         category: "APPARITION",
-        hook: "She crosses when there is no traffic, then the road goes cold.",
+        hook:
+          "She waits to cross in a dress a hundred years out of style. Look twice and the corner is empty.",
       },
       {
         id: "haunting-upstairs",
         category: "HAUNTING",
-        hook: "They named the thing upstairs. It still walks after close.",
+        hook:
+          "The staff gave it a name so they would stop being scared. It still walks the upstairs after last call.",
       },
       {
-        id: "river-answer",
-        category: "CRYPTID",
-        hook: "Call across the water and something answers from underneath.",
+        id: "called-up",
+        category: "RITUAL",
+        hook:
+          "A few kids wanted to get back at a teacher. What they called up stayed long after he left.",
       },
       {
-        id: "cemetery-static",
-        category: "CEMETERY FILE",
-        hook: "The recorder catches a second set of footsteps in the snow.",
+        id: "creature-water",
+        category: "THE CREATURE",
+        hook: "Say the name across the water and wait. Something always answers.",
       },
     ],
     decoyPins: [

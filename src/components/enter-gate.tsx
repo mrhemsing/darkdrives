@@ -7,6 +7,46 @@ import { captureEvent } from "@/components/analytics-events";
 export function EnterGate() {
   const [entered, setEntered] = useState(false);
 
+  if (!entered) {
+    return (
+      <div className="fixed inset-0 z-[90] flex items-center justify-center bg-background px-5">
+        <div className="max-w-md text-center">
+          <p className="font-display text-6xl uppercase text-blood-hot">
+            Dark Drives
+          </p>
+          <p className="mt-4 font-mono text-sm uppercase tracking-[0.24em] text-sick">
+            Saskatoon, after dark.
+          </p>
+          <p className="mt-8 text-xl leading-8 text-bone">
+            This is meant to be heard. Turn your sound on.
+          </p>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
+            <button
+              onClick={() => {
+                setEntered(true);
+                captureEvent("sample_listen", { state: "armed" });
+              }}
+              className="inline-flex h-12 items-center justify-center gap-2 rounded-sm bg-blood px-5 font-mono text-sm uppercase text-bone transition hover:bg-blood-hot"
+            >
+              <Volume2 size={18} aria-hidden />
+              Enter
+            </button>
+            <button
+              onClick={() => {
+                setEntered(true);
+                captureEvent("sample_listen", { state: "muted" });
+              }}
+              className="inline-flex h-12 items-center justify-center gap-2 rounded-sm border border-ash-line px-5 font-mono text-sm uppercase text-bone transition hover:border-sick hover:text-sick"
+            >
+              <VolumeX size={18} aria-hidden />
+              Continue muted
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <button
       onClick={() => {
