@@ -1,0 +1,176 @@
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/oswald";
+@import "@fontsource-variable/jetbrains-mono";
+@import "tailwindcss";
+@import "maplibre-gl/dist/maplibre-gl.css";
+
+:root {
+  --background: #0a0908;
+  --foreground: #e6e1d6;
+  --bone: #e6e1d6;
+  --bone-dim: #bdb5a6;
+  --ash: #6f6a60;
+  --ash-deep: #25221f;
+  --ash-line: #3a352f;
+  --blood: #9f000b;
+  --blood-hot: #b3000f;
+  --blood-dim: #4b0507;
+  --sick: #92b86b;
+  --sick-dim: #31482d;
+  --paper: #181410;
+  --black-warm: #0a0908;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-bone: var(--bone);
+  --color-bone-dim: var(--bone-dim);
+  --color-ash: var(--ash);
+  --color-ash-deep: var(--ash-deep);
+  --color-ash-line: var(--ash-line);
+  --color-blood: var(--blood);
+  --color-blood-hot: var(--blood-hot);
+  --color-blood-dim: var(--blood-dim);
+  --color-sick: var(--sick);
+  --color-sick-dim: var(--sick-dim);
+  --color-paper: var(--paper);
+  --font-sans: "Inter Variable", system-ui, sans-serif;
+  --font-display: "Oswald Variable", Impact, sans-serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--background);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(146, 184, 107, 0.08), transparent 28rem),
+    linear-gradient(180deg, rgba(10, 9, 8, 0.94), var(--background));
+  color: var(--foreground);
+  font-family: "Inter Variable", system-ui, sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: var(--blood);
+  color: var(--bone);
+}
+
+.film-grain::before {
+  pointer-events: none;
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  opacity: 0.13;
+  mix-blend-mode: screen;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.16) 0 1px, transparent 1px),
+    radial-gradient(circle at 70% 40%, rgba(255, 255, 255, 0.1) 0 1px, transparent 1px),
+    radial-gradient(circle at 45% 80%, rgba(255, 255, 255, 0.12) 0 1px, transparent 1px);
+  background-size: 19px 23px, 31px 37px, 47px 43px;
+  animation: grain 1.4s steps(4) infinite;
+}
+
+.scanlines {
+  position: relative;
+}
+
+.scanlines::after {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(230, 225, 214, 0.05),
+    rgba(230, 225, 214, 0.05) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+  opacity: 0.28;
+}
+
+.flicker {
+  animation: flicker 7s infinite;
+}
+
+.redacted {
+  display: inline-block;
+  min-width: 5.5rem;
+  height: 0.9em;
+  transform: translateY(0.13em);
+  background: var(--bone);
+  box-shadow: 0 0 16px rgba(230, 225, 214, 0.12);
+}
+
+.maplibregl-control-container {
+  display: none;
+}
+
+@keyframes grain {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  25% {
+    transform: translate3d(-1%, 1%, 0);
+  }
+  50% {
+    transform: translate3d(1%, -1%, 0);
+  }
+  75% {
+    transform: translate3d(-1%, -1%, 0);
+  }
+  100% {
+    transform: translate3d(1%, 1%, 0);
+  }
+}
+
+@keyframes flicker {
+  0%,
+  8%,
+  10%,
+  42%,
+  44%,
+  100% {
+    opacity: 1;
+    text-shadow: 0 0 18px rgba(179, 0, 15, 0.22);
+  }
+  9%,
+  43% {
+    opacity: 0.72;
+    text-shadow: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .film-grain::before,
+  .scanlines::after {
+    display: none;
+  }
+}
