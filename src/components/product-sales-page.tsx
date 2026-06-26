@@ -313,7 +313,7 @@ export function ProductSalesPage({ product }: { product: Tour }) {
       {isAudioTour ? (
         <section className="border-b border-ash-line px-5 py-16 sm:px-8">
           <div className="mx-auto max-w-7xl">
-            <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+            <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
               <div>
                 <p className="font-mono text-xs uppercase tracking-[0.28em] text-sick">
                   How it works
