@@ -1,4 +1,10 @@
 import { PageHero } from "@/components/page-hero";
+import { pageMetadata, seo } from "@/lib/seo";
+
+export const metadata = pageMetadata({
+  ...seo.howItWorks,
+  path: "/how-it-works",
+});
 
 export default function HowItWorksPage() {
   return (

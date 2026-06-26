@@ -4,22 +4,26 @@ import { Analytics } from "@vercel/analytics/next";
 import { AnalyticsEvents } from "@/components/analytics-events";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
+import { defaultOg, siteUrl } from "@/lib/seo";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://darkdrives.ca"),
+  metadataBase: new URL(siteUrl),
   title: {
     default: "Dark Drives",
-    template: "%s | Dark Drives",
+    template: "%s",
   },
-  description:
-    "Immersive audio driving tours through haunted, cursed, and true-crime ground. First file: The Dark Side of Saskatoon.",
+  description: defaultOg.description,
   openGraph: {
-    title: "Dark Drives",
-    description:
-      "Everything you are about to hear happened here. Get in the car.",
+    title: defaultOg.title,
+    description: defaultOg.description,
     siteName: "Dark Drives",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: defaultOg.title,
+    description: defaultOg.description,
   },
 };
 
@@ -34,6 +38,21 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Dark Drives",
+              url: siteUrl,
+              publisher: {
+                "@type": "Organization",
+                name: "Off Grid Sask",
+              },
+            }),
+          }}
+        />
         <Suspense fallback={null}>
           <AnalyticsEvents />
         </Suspense>

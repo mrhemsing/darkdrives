@@ -1,4 +1,7 @@
 import { PageHero } from "@/components/page-hero";
+import { pageMetadata, seo } from "@/lib/seo";
+
+export const metadata = pageMetadata({ ...seo.faq, path: "/faq" });
 
 const faqs = [
   ["Is this the actual tour?", "No. This site sells the tour. The player, route, stops, and audio are not public."],

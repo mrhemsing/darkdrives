@@ -6,8 +6,11 @@ import { RedactedCard } from "@/components/redacted-card";
 import { TeaserMap } from "@/components/teaser-map";
 import { TourCta } from "@/components/tour-cta";
 import { tours } from "@/data/tours";
+import { pageMetadata, seo } from "@/lib/seo";
 
 const tour = tours[0];
+
+export const metadata = pageMetadata({ ...seo.home, path: "/" });
 
 export default function Home() {
   return (

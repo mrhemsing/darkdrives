@@ -7,14 +7,14 @@ import { RedactedCard } from "@/components/redacted-card";
 import { TeaserMap } from "@/components/teaser-map";
 import { TourCta } from "@/components/tour-cta";
 import { tours } from "@/data/tours";
+import { pageMetadata, seo } from "@/lib/seo";
 
 const tour = tours[0];
 
-export const metadata: Metadata = {
-  title: "The Dark Side of Saskatoon",
-  description:
-    "Pre-order a self-guided haunted audio driving tour through Saskatoon. Forty plus real locations, redacted for the public site.",
-};
+export const metadata: Metadata = pageMetadata({
+  ...seo.saskatoon,
+  path: "/saskatoon",
+});
 
 export default function SaskatoonPage() {
   return (

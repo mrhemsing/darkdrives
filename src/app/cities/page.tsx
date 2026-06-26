@@ -2,6 +2,9 @@ import { CityVoteForm } from "@/components/city-vote-form";
 import { PageHero } from "@/components/page-hero";
 import { expansionCities } from "@/data/cities";
 import { tours } from "@/data/tours";
+import { pageMetadata, seo } from "@/lib/seo";
+
+export const metadata = pageMetadata({ ...seo.cities, path: "/cities" });
 
 export default function CitiesPage() {
   return (

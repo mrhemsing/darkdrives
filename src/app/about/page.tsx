@@ -1,4 +1,7 @@
 import { PageHero } from "@/components/page-hero";
+import { pageMetadata, seo } from "@/lib/seo";
+
+export const metadata = pageMetadata({ ...seo.about, path: "/about" });
 
 export default function AboutPage() {
   return (
