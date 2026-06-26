@@ -10,13 +10,16 @@ const terms = [
   ],
   [
     "2. What you are buying",
-    "A Dark Drives tour is a digital audio product. Your purchase gives you a personal, non-transferable, non-commercial licence to access and use the tour for your own enjoyment. One purchase covers personal use within a single vehicle. You may not copy, record, redistribute, resell, publicly perform, or share the audio, route, or content.",
+    "Dark Drives sells digital products, including narrated audio driving tours and GPS guide downloads. Your purchase gives you a personal, non-transferable, non-commercial licence to access and use the product for your own enjoyment. One purchase covers personal use within a single vehicle or household. You may not copy, record, redistribute, resell, publicly perform, scrape, publish, or share the audio, route, GPS pins, guide files, or content.",
   ],
   [
     "3. Pre-orders and pricing",
-    "A pre-order charges the founding price at the time of purchase and grants access when the tour launches. Prices, including founding prices, may change for future buyers. The price you paid is the price you paid.",
+    "A pre-order charges the founding price at the time of purchase and grants access when the product launches. Instant-download products are delivered after checkout once payment is complete. Prices, including founding prices and bundle prices, may change for future buyers. The price you paid is the price you paid.",
   ],
-  ["4. Refunds", tour.refundLine],
+  [
+    "4. Refunds",
+    `${tour.refundLine} Instant-download guide sales are final once accessed or delivered unless required otherwise by law. If something breaks technically, contact us and we will make it right.`,
+  ],
   [
     "5. Eligibility and conduct",
     `You must be ${tour.minimumAge} or older to purchase. You agree to use the tour lawfully and respectfully, to obey all traffic and property laws, to avoid trespassing, and to follow the Disclaimer at all times. We may revoke access for misuse.`,
@@ -31,7 +34,7 @@ const terms = [
   ],
   [
     "8. Assumption of risk and release",
-    "You take part voluntarily and at your own risk, and you release Off Grid Sask and Dark Drives from claims arising from your participation, to the fullest extent permitted by law. See the Disclaimer.",
+    "You take part voluntarily and at your own risk, and you release Off Grid Sask and Dark Drives from claims arising from your participation, to the fullest extent permitted by law. GPS guide listings, map pins, route notes, or story references are not permission to enter private property, closed public property, abandoned structures, tunnels, ruins, waterways, restricted areas, or hazardous places. See the Disclaimer.",
   ],
   [
     "9. Limitation of liability",

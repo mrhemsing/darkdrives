@@ -12,7 +12,7 @@ First tour: `The Dark Side of Saskatoon`.
 - Tailwind CSS v4 tokens in `src/app/globals.css`
 - Stripe Checkout and webhook
 - Supabase for waitlist, orders, and submissions
-- MapLibre teaser map with decoy pins only
+- Static decoy teaser map with scrambled pins only
 - Vercel Analytics
 - PostHog event hooks
 - Email sequence copy in `src/data/email-sequence.ts`

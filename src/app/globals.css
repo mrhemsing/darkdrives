@@ -2,7 +2,6 @@
 @import "@fontsource-variable/oswald";
 @import "@fontsource-variable/jetbrains-mono";
 @import "tailwindcss";
-@import "maplibre-gl/dist/maplibre-gl.css";
 
 :root {
   --background: #0a0908;
@@ -116,8 +115,48 @@ a {
   box-shadow: 0 0 16px rgba(230, 225, 214, 0.12);
 }
 
-.maplibregl-control-container {
-  display: none;
+.metric-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+.metric-card {
+  min-width: 0;
+  min-height: 7.25rem;
+  border: 1px solid var(--ash-line);
+  padding: clamp(1.25rem, 5vw, 1.75rem);
+}
+
+.metric-card-value {
+  font-family: "Oswald Variable", Impact, sans-serif;
+  font-size: clamp(2.75rem, 13vw, 4.5rem);
+  line-height: 0.9;
+  color: var(--blood-hot);
+}
+
+.metric-card-label {
+  margin-top: 0.75rem;
+  color: var(--ash);
+  font-family: "JetBrains Mono Variable", ui-monospace, monospace;
+  font-size: clamp(0.78rem, 3.4vw, 1.05rem);
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+  text-transform: uppercase;
+}
+
+@media (min-width: 520px) {
+  .metric-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .metric-card {
+    min-height: 8rem;
+  }
+
+  .metric-card-label {
+    overflow-wrap: normal;
+  }
 }
 
 @keyframes grain {

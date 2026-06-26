@@ -16,6 +16,7 @@ type SeoConfig = {
   path: string;
   ogTitle?: string;
   ogDescription?: string;
+  keywords?: string[];
 };
 
 export function pageMetadata({
@@ -24,12 +25,14 @@ export function pageMetadata({
   path,
   ogTitle = title,
   ogDescription = description,
+  keywords,
 }: SeoConfig): Metadata {
   const canonical = path === "/" ? siteUrl : `${siteUrl}${path}`;
 
   return {
     title,
     description,
+    keywords,
     alternates: {
       canonical,
     },
@@ -59,6 +62,14 @@ export const seo = {
     ogDescription:
       "A self-guided audio driving tour you run after dark. Real places. Real records. The Dark Side of Saskatoon is live.",
   },
+  catalog: {
+    title: "Dark Drives Catalog | Audio Tours and GPS Guides",
+    description:
+      "Shop Dark Drives audio tours, GPS guides, and All Access: Saskatoon, Regina, Lethbridge, and the Ohio Creepy GPS Adventure Guide.",
+    ogTitle: "Choose your drive.",
+    ogDescription:
+      "One storefront for haunted audio driving tours, instant GPS guides, and creepy road-trip files.",
+  },
   saskatoon: {
     title: "The Dark Side of Saskatoon | Haunted Audio Driving Tour",
     description:
@@ -68,12 +79,12 @@ export const seo = {
       "40+ real haunted and true-crime locations. A self-guided audio tour you drive in a single night. Pre-order the founding price now.",
   },
   cities: {
-    title: "Dark Drives | Coming to Regina, Lethbridge, Medicine Hat",
+    title: "Dark Drives | Future Cities and Votes",
     description:
-      "Saskatoon is live. Vote to summon the next Dark Drives haunted audio driving tour in Regina, Lethbridge, or Medicine Hat.",
-    ogTitle: "The road does not end in Saskatoon.",
+      "Vote for future Dark Drives cities and get notified when the next haunted guide or audio driving tour launches.",
+    ogTitle: "The road does not end here.",
     ogDescription:
-      "Three cities are already whispering. Vote for the one we raise next: Regina, Lethbridge, or Medicine Hat.",
+      "Medicine Hat and the next wave are still buried. Vote for what Dark Drives should raise next.",
   },
   howItWorks: {
     title: "How Dark Drives Works | Haunted Audio Driving Tours",

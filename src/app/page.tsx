@@ -2,10 +2,11 @@ import Link from "next/link";
 import { ArrowRight, MapPin, Radio, Video } from "lucide-react";
 import { CityVoteForm } from "@/components/city-vote-form";
 import { EnterGate } from "@/components/enter-gate";
+import { ProductCard } from "@/components/product-card";
 import { RedactedCard } from "@/components/redacted-card";
 import { TeaserMap } from "@/components/teaser-map";
 import { TourCta } from "@/components/tour-cta";
-import { tours } from "@/data/tours";
+import { bundleProducts, guideProducts, tours } from "@/data/tours";
 import { pageMetadata, seo } from "@/lib/seo";
 
 const tour = tours[0];
@@ -35,11 +36,11 @@ export default function Home() {
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <Link
-              href="/saskatoon"
+              href="/catalog"
               className="inline-flex h-12 items-center justify-center gap-2 rounded-sm bg-blood px-5 font-mono text-sm uppercase text-bone transition hover:bg-blood-hot"
             >
               <ArrowRight size={18} aria-hidden />
-              Take the drive
+              Shop the catalog
             </Link>
             <EnterGate />
           </div>
@@ -80,20 +81,19 @@ export default function Home() {
               {tour.stopCountDisplay}. Citywide. None of them marked here are
               exactly where they are.
             </p>
-            <div className="mt-7 grid gap-3 sm:grid-cols-3">
+            <div className="metric-grid mt-7">
               {tour.categoryStats.slice(0, 3).map((stat) => (
-                <div key={stat.category} className="border border-ash-line p-4">
-                  <p className="font-display text-4xl text-blood-hot">
-                    {stat.count}
-                  </p>
-                  <p className="font-mono text-xs uppercase text-ash">
-                    {stat.category}
-                  </p>
+                <div
+                  key={stat.category}
+                  className="metric-card"
+                >
+                  <p className="metric-card-value">{stat.count}</p>
+                  <p className="metric-card-label">{stat.category}</p>
                 </div>
               ))}
             </div>
           </div>
-          <TeaserMap pins={tour.decoyPins} />
+          <TeaserMap pins={tour.decoyPins ?? []} />
         </div>
       </section>
 
@@ -134,6 +134,40 @@ export default function Home() {
       <section className="px-5 py-20 sm:px-8">
         <div className="mx-auto mb-20 max-w-7xl">
           <p className="font-mono text-xs uppercase tracking-[0.28em] text-sick">
+            Instant guides
+          </p>
+          <div className="mt-6 flex flex-col justify-between gap-5 md:flex-row md:items-end">
+            <div>
+              <h2 className="font-display text-5xl uppercase leading-none">
+                Open a file tonight.
+              </h2>
+              <p className="mt-5 max-w-2xl text-bone-dim">
+                Regina, Lethbridge, and Ohio are GPS guides: buy, download,
+                drive. Saskatoon stays the premium narrated audio tour.
+              </p>
+            </div>
+            <Link
+              href="/catalog"
+              className="inline-flex h-11 items-center justify-center gap-2 rounded-sm border border-blood px-4 font-mono text-xs uppercase text-bone transition hover:bg-blood"
+            >
+              <ArrowRight size={16} aria-hidden />
+              View all products
+            </Link>
+          </div>
+          <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {guideProducts.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+          <div className="mt-4 grid gap-4">
+            {bundleProducts.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+        </div>
+
+        <div className="mx-auto mb-20 max-w-7xl">
+          <p className="font-mono text-xs uppercase tracking-[0.28em] text-sick">
             Reports from the road
           </p>
           <div className="mt-6 grid gap-4 md:grid-cols-3">
@@ -168,10 +202,11 @@ export default function Home() {
               More cities
             </p>
             <h2 className="mt-4 font-display text-5xl uppercase leading-none">
-              Saskatoon is only the first.
+              Medicine Hat is still buried.
             </h2>
             <p className="mt-5 max-w-2xl text-bone-dim">
-              The road does not end here. Tell us which city to haunt next.
+              The first catalog is live. Tell us what should get mapped after
+              that.
             </p>
             <p className="mt-6 font-mono text-xl uppercase text-blood-hot">
               Film your drive. If you make it through, tag it. #DarkDrives
@@ -179,7 +214,7 @@ export default function Home() {
             <div className="mt-8 flex flex-wrap gap-3">
               <span className="inline-flex items-center gap-2 border border-ash-line px-3 py-2 font-mono text-xs text-bone-dim">
                 <MapPin size={14} aria-hidden />
-                Saskatoon file active
+                Four files active
               </span>
               <span className="inline-flex items-center gap-2 border border-ash-line px-3 py-2 font-mono text-xs text-bone-dim">
                 <Radio size={14} aria-hidden />
@@ -191,7 +226,7 @@ export default function Home() {
               </span>
             </div>
           </div>
-          <CityVoteForm defaultCity="regina" />
+          <CityVoteForm defaultCity="medicine hat" />
         </div>
       </section>
     </main>

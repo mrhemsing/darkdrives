@@ -29,6 +29,15 @@ export function TourCta({ tour }: { tour: Tour }) {
     setError(data.error ?? "Checkout is not configured yet.");
   }
 
+  const purchaseLabel =
+    tour.status === "preorder"
+      ? "Pre-order now"
+      : tour.format === "audio-tour"
+        ? "Buy the tour"
+        : tour.format === "bundle"
+          ? "Get all access"
+          : "Buy the guide";
+
   return (
     <div id="buy" className="flex flex-col gap-2">
       <label className="mb-2 flex max-w-md gap-3 text-xs leading-5 text-bone-dim">
@@ -49,7 +58,7 @@ export function TourCta({ tour }: { tour: Tour }) {
         className="inline-flex h-12 items-center justify-center gap-2 rounded-sm bg-blood px-5 font-mono text-sm uppercase text-bone transition hover:bg-blood-hot disabled:cursor-wait disabled:bg-blood-dim"
       >
         {loading ? <Loader2 className="animate-spin" size={18} /> : <CreditCard size={18} />}
-        {tour.status === "live" ? "Buy the tour" : "Pre-order now"} {tour.priceDisplay}
+        {purchaseLabel} {tour.priceDisplay}
       </button>
       {error ? <p className="max-w-sm font-mono text-xs text-sick">{error}</p> : null}
     </div>

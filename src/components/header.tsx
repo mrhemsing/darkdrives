@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 const nav = [
+  ["Catalog", "/catalog"],
   ["Saskatoon", "/saskatoon"],
   ["Cities", "/cities"],
   ["How it works", "/how-it-works"],
@@ -22,10 +23,10 @@ export function Header() {
           ))}
         </nav>
         <Link
-          href="/saskatoon#buy"
+          href="/catalog"
           className="rounded-sm border border-blood px-3 py-2 font-mono text-xs uppercase text-bone transition hover:bg-blood"
         >
-          Pre-order
+          Shop
         </Link>
       </div>
     </header>

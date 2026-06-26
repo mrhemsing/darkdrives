@@ -17,6 +17,10 @@ const sections = [
     "You take part at your own risk.",
     "Participation is entirely voluntary and at your own risk. You are responsible for your own safety, your vehicle, your passengers, and your conduct, and for obeying all laws. To the fullest extent permitted by law, Off Grid Sask and Dark Drives are not liable for any injury, loss, damage, fine, or harm arising from your use of a tour or your visit to any location.",
   ],
+  [
+    "Extra caution for GPS guides.",
+    "Some GPS guide products may reference abandoned buildings, tunnels, ruins, remote roads, waterways, or other hazardous places. Do not enter abandoned structures, cross barriers, ignore posted signs, or access private land without explicit permission from the landowner. A location being listed in a guide is not permission to enter it.",
+  ],
 ];
 
 export default function DisclaimerPage() {

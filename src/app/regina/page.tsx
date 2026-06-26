@@ -3,13 +3,13 @@ import { ProductSalesPage } from "@/components/product-sales-page";
 import { getProductBySlug } from "@/data/tours";
 import { pageMetadata } from "@/lib/seo";
 
-const product = getProductBySlug("saskatoon")!;
+const product = getProductBySlug("regina")!;
 
 export const metadata: Metadata = pageMetadata({
   ...product.seo,
-  path: "/saskatoon",
+  path: "/regina",
 });
 
-export default function SaskatoonPage() {
+export default function ReginaPage() {
   return <ProductSalesPage product={product} />;
 }
