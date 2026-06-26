@@ -16,7 +16,7 @@ export function EnterGate() {
             Dark Drives
           </p>
           <p className="mt-4 font-mono text-sm uppercase tracking-[0.24em] text-sick">
-            Saskatoon, after dark.
+            Open the file after dark.
           </p>
           <p className="mt-8 text-xl leading-8 text-bone">
             This is meant to be heard. Turn your sound on.
