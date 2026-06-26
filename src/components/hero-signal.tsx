@@ -1,4 +1,4 @@
-import { SignalPlayer } from "@/components/signal-player";
+import SignalPlayer from "@/components/signal-player";
 
 export function HeroSignal({ audioSrc }: { audioSrc?: string }) {
   return (

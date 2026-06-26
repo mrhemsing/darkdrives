@@ -13,7 +13,7 @@ type SignalPlayerProps = {
 
 const idleBars = Array.from({ length: 28 }, (_, index) => 18 + ((index * 19) % 52));
 
-export function SignalPlayer({
+export default function SignalPlayer({
   audioSrc,
   label = "The signal",
   description = "This is what the dark sounds like. Press play.",

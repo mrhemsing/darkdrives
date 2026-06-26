@@ -11,7 +11,7 @@ import { CheckoutStatus } from "@/components/checkout-status";
 import { HowItWorksCard } from "@/components/how-it-works-card";
 import { PageHero } from "@/components/page-hero";
 import { RedactedCard } from "@/components/redacted-card";
-import { SignalPlayer } from "@/components/signal-player";
+import SignalPlayer from "@/components/signal-player";
 import { TeaserMap } from "@/components/teaser-map";
 import { TourCta } from "@/components/tour-cta";
 import type { Tour } from "@/data/tours";

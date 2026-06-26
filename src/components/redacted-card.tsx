@@ -1,5 +1,5 @@
 import type { TeaserCard } from "@/data/tours";
-import { SignalPlayer } from "@/components/signal-player";
+import SignalPlayer from "@/components/signal-player";
 
 export function RedactedCard({ teaser }: { teaser: TeaserCard }) {
   return (
