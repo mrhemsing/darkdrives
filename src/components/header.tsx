@@ -11,11 +11,14 @@ const nav = [
 export function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-ash-line/80 bg-background/82 backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-8">
-        <Link href="/" className="font-display text-2xl uppercase text-blood-hot">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-5 sm:px-8">
+        <Link
+          href="/"
+          className="flicker font-display text-3xl uppercase leading-none text-blood-hot sm:text-4xl"
+        >
           Dark Drives
         </Link>
-        <nav className="hidden items-center gap-6 font-mono text-xs uppercase text-bone-dim md:flex">
+        <nav className="hidden items-center gap-7 font-mono text-sm uppercase text-bone-dim lg:flex lg:text-base">
           {nav.map(([label, href]) => (
             <Link key={href} href={href} className="transition hover:text-bone">
               {label}
@@ -24,7 +27,7 @@ export function Header() {
         </nav>
         <Link
           href="/catalog"
-          className="rounded-sm border border-blood px-3 py-2 font-mono text-xs uppercase text-bone transition hover:bg-blood"
+          className="rounded-sm border border-blood px-4 py-3 font-mono text-sm uppercase text-bone transition hover:bg-blood sm:text-base"
         >
           Shop
         </Link>
