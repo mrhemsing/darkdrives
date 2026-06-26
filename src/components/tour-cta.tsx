@@ -8,6 +8,7 @@ import type { Tour } from "@/data/tours";
 export function TourCta({ tour }: { tour: Tour }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [marketingConsent, setMarketingConsent] = useState(false);
 
   async function startCheckout() {
     setLoading(true);
@@ -16,7 +17,7 @@ export function TourCta({ tour }: { tour: Tour }) {
     const response = await fetch("/api/checkout", {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ tourId: tour.id }),
+      body: JSON.stringify({ tourId: tour.id, marketingConsent }),
     });
     const data = (await response.json()) as { url?: string; error?: string };
     setLoading(false);
@@ -30,6 +31,18 @@ export function TourCta({ tour }: { tour: Tour }) {
 
   return (
     <div id="buy" className="flex flex-col gap-2">
+      <label className="mb-2 flex max-w-md gap-3 text-xs leading-5 text-bone-dim">
+        <input
+          type="checkbox"
+          checked={marketingConsent}
+          onChange={(event) => setMarketingConsent(event.target.checked)}
+          className="mt-1 h-4 w-4 accent-blood"
+        />
+        <span>
+          Send me Dark Drives launch notes, pre-launch files, and related tour
+          updates. I can unsubscribe anytime.
+        </span>
+      </label>
       <button
         onClick={startCheckout}
         disabled={loading}

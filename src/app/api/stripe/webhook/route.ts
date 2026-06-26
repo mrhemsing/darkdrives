@@ -35,6 +35,7 @@ export async function POST(request: Request) {
         email: session.customer_details?.email,
         tour_id: session.metadata?.tourId,
         commerce_mode: session.metadata?.commerceMode,
+        marketing_consent: session.metadata?.marketingConsent === "true",
         amount_total: session.amount_total,
         currency: session.currency,
       });

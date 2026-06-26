@@ -14,6 +14,8 @@ First tour: `The Dark Side of Saskatoon`.
 - Supabase for waitlist, orders, and submissions
 - MapLibre teaser map with decoy pins only
 - Vercel Analytics
+- PostHog event hooks
+- Email sequence copy in `src/data/email-sequence.ts`
 
 ## Local
 
@@ -29,6 +31,10 @@ Default local URL: `http://localhost:3000`.
 Copy `.env.example` to `.env.local` and fill values when commerce and storage are ready.
 
 The site defaults to pre-order mode. Use `NEXT_PUBLIC_COMMERCE_MODE=waitlist` to pause checkout.
+
+Marketing consent is required for city vote emails and optional during checkout.
+Before production sending, add unsubscribe and the business mailing address in
+the email provider.
 
 ## Content Protection
 

@@ -36,6 +36,7 @@ export async function POST(request: Request) {
     metadata: {
       tourId: tour.id,
       commerceMode,
+      marketingConsent: String(parsed.data.marketingConsent),
     },
   });
 

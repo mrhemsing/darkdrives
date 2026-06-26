@@ -19,6 +19,7 @@ export function CityVoteForm({ defaultCity }: { defaultCity: string }) {
         email: formData.get("email"),
         city: formData.get("city"),
         source: "city_vote",
+        marketingConsent: formData.get("marketingConsent") === "on",
       }),
       headers: { "content-type": "application/json" },
     });
@@ -66,6 +67,18 @@ export function CityVoteForm({ defaultCity }: { defaultCity: string }) {
           className="h-11 min-w-0 flex-1 rounded-none border border-ash-line bg-background px-3 font-mono text-sm text-bone outline-none placeholder:text-ash"
         />
       </div>
+      <label className="mt-4 flex gap-3 text-xs leading-5 text-bone-dim">
+        <input
+          name="marketingConsent"
+          type="checkbox"
+          required
+          className="mt-1 h-4 w-4 accent-blood"
+        />
+        <span>
+          I agree to receive Dark Drives email about this city launch and
+          related tour updates. I can unsubscribe anytime.
+        </span>
+      </label>
       <button className="mt-5 inline-flex h-11 w-full items-center justify-center gap-2 rounded-sm bg-blood px-4 font-mono text-xs uppercase text-bone transition hover:bg-blood-hot">
         <Send size={16} aria-hidden />
         Vote to summon

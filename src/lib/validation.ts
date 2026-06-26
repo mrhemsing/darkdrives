@@ -4,10 +4,12 @@ export const waitlistSchema = z.object({
   email: z.string().email().max(160),
   city: z.string().min(2).max(80).transform((value) => value.toLowerCase()),
   source: z.string().min(2).max(80).default("site"),
+  marketingConsent: z.literal(true),
 });
 
 export const checkoutSchema = z.object({
   tourId: z.string().min(2).max(120),
+  marketingConsent: z.boolean().default(false),
 });
 
 export const submitSchema = z.object({
