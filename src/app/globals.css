@@ -103,7 +103,8 @@ a {
 }
 
 .flicker {
-  animation: flicker 7s infinite;
+  animation: flicker 4.8s linear infinite;
+  will-change: opacity, filter, text-shadow;
 }
 
 .redacted {
@@ -134,19 +135,86 @@ a {
 }
 
 @keyframes flicker {
-  0%,
-  8%,
-  10%,
-  42%,
-  44%,
-  100% {
+  0% {
     opacity: 1;
-    text-shadow: 0 0 18px rgba(179, 0, 15, 0.22);
+    filter: brightness(1.05);
+    text-shadow:
+      0 0 10px rgba(179, 0, 15, 0.32),
+      0 0 28px rgba(179, 0, 15, 0.18);
+  }
+  2% {
+    opacity: 0.42;
+    filter: brightness(0.7);
+    text-shadow: none;
+  }
+  3%,
+  7% {
+    opacity: 1;
+    filter: brightness(1.16);
+    text-shadow:
+      0 0 16px rgba(179, 0, 15, 0.45),
+      0 0 38px rgba(179, 0, 15, 0.24);
+  }
+  8% {
+    opacity: 0.18;
+    filter: brightness(0.55);
+    text-shadow: none;
   }
   9%,
-  43% {
-    opacity: 0.72;
+  21% {
+    opacity: 0.96;
+    filter: brightness(1);
+  }
+  22% {
+    opacity: 0.58;
+    filter: brightness(0.8);
     text-shadow: none;
+  }
+  23%,
+  44% {
+    opacity: 1;
+    filter: brightness(1.08);
+    text-shadow:
+      0 0 12px rgba(179, 0, 15, 0.34),
+      0 0 30px rgba(179, 0, 15, 0.18);
+  }
+  45% {
+    opacity: 0.68;
+    filter: brightness(0.75);
+    text-shadow: none;
+  }
+  46% {
+    opacity: 0.22;
+  }
+  47%,
+  53% {
+    opacity: 1;
+    filter: brightness(1.18);
+    text-shadow:
+      0 0 18px rgba(179, 0, 15, 0.48),
+      0 0 44px rgba(179, 0, 15, 0.26);
+  }
+  54% {
+    opacity: 0.8;
+    filter: brightness(0.9);
+  }
+  55%,
+  76% {
+    opacity: 1;
+    filter: brightness(1.04);
+  }
+  77% {
+    opacity: 0.38;
+    filter: brightness(0.68);
+    text-shadow: none;
+  }
+  78%,
+  100% {
+    opacity: 1;
+    filter: brightness(1.08);
+    text-shadow:
+      0 0 10px rgba(179, 0, 15, 0.32),
+      0 0 28px rgba(179, 0, 15, 0.18);
   }
 }
 
