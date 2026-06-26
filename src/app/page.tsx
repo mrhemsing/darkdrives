@@ -1,11 +1,13 @@
 import Link from "next/link";
 import { ArrowRight, MapPin, Radio, Video } from "lucide-react";
 import { CityVoteForm } from "@/components/city-vote-form";
-import { EnterGate } from "@/components/enter-gate";
+import { FreeFileForm } from "@/components/free-file-form";
+import { HeroSignal } from "@/components/hero-signal";
+import { HowItWorksCard } from "@/components/how-it-works-card";
 import { ProductCard } from "@/components/product-card";
 import { RedactedCard } from "@/components/redacted-card";
+import { StickyBuyBar } from "@/components/sticky-buy-bar";
 import { TeaserMap } from "@/components/teaser-map";
-import { TourCta } from "@/components/tour-cta";
 import { bundleProducts, guideProducts, tours } from "@/data/tours";
 import { pageMetadata, seo } from "@/lib/seo";
 
@@ -17,23 +19,28 @@ export default function Home() {
   return (
     <main>
       <section className="scanlines relative min-h-[92vh] overflow-hidden border-b border-ash-line">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(146,184,107,0.11),transparent_20rem),linear-gradient(180deg,rgba(10,9,8,0.25),var(--background)_86%)]" />
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-45"
+          style={{
+            backgroundImage:
+              "url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=78')",
+          }}
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,9,8,0.96),rgba(10,9,8,0.74)_48%,rgba(10,9,8,0.92)),radial-gradient(circle_at_60%_20%,rgba(146,184,107,0.14),transparent_22rem)]" />
         <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-background to-transparent" />
         <div className="relative mx-auto flex min-h-[92vh] max-w-7xl flex-col justify-center px-5 py-28 sm:px-8">
           <p className="font-mono text-xs uppercase tracking-[0.34em] text-sick">
             Off Grid Sask presents
           </p>
           <h1 className="mt-5 max-w-4xl font-display text-6xl uppercase leading-none text-bone sm:text-8xl lg:text-9xl">
-            <span className="flicker block text-blood-hot">Dark Drives</span>
-          </h1>
-          <p className="mt-6 max-w-2xl text-2xl font-semibold leading-tight text-bone sm:text-4xl">
             Everything you are about to hear happened here.
-          </p>
+          </h1>
           <p className="mt-6 max-w-xl text-base leading-7 text-bone-dim sm:text-lg">
             You have driven past all of it. You just never knew. The Dark Side
             of Saskatoon is a self-guided audio tour you run after dark. Real
             places. Real records. One city you thought you knew.
           </p>
+          <HeroSignal audioSrc={tour.trailerAudio} />
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <Link
               href="/catalog"
@@ -42,23 +49,40 @@ export default function Home() {
               <ArrowRight size={18} aria-hidden />
               Shop the catalog
             </Link>
-            <EnterGate />
+            <Link
+              href="/saskatoon#preview"
+              className="inline-flex h-12 items-center justify-center gap-2 rounded-sm border border-ash-line px-5 font-mono text-sm uppercase text-bone transition hover:border-sick hover:text-sick"
+            >
+              <Radio size={18} aria-hidden />
+              Preview the tour
+            </Link>
           </div>
+          <div className="mt-6 grid gap-2 border-y border-ash-line/80 py-4 font-mono text-[0.68rem] uppercase leading-5 tracking-[0.04em] text-ash sm:flex sm:flex-wrap sm:gap-x-4">
+            <span>4 guides live</span>
+            <span>230+ real locations</span>
+            <span>Instant access</span>
+            <span>Drive tonight</span>
+          </div>
+          <p className="mt-4 max-w-xl text-sm leading-6 text-bone-dim">
+            Every road on every tour was driven by us, at the hours the stories happen.
+          </p>
         </div>
       </section>
 
-      <section className="border-b border-ash-line bg-paper/55 px-5 py-12 sm:px-8">
+      <section className="border-b border-ash-line bg-background px-5 py-12 sm:px-8">
         <div className="mx-auto grid max-w-7xl gap-4 md:grid-cols-3">
           {[
-            ["Unlock", "Buy the tour once. It is yours for good."],
-            ["Drive", "Gather your bravest friends. Wait for dark. Follow the route."],
-            ["Listen", "Press play at every stop. Hear what the city buried."],
-          ].map(([title, copy], index) => (
-            <div key={title} className="border border-ash-line bg-background/70 p-5">
-            <p className="font-mono text-xs text-blood-hot">0{index + 1}</p>
-              <h2 className="mt-4 font-display text-3xl uppercase">{title}</h2>
-              <p className="mt-3 text-sm leading-6 text-bone-dim">{copy}</p>
-            </div>
+            ["01", "Unlock", "Buy the tour once. It is yours for good.", "key"],
+            ["02", "Drive", "Gather your bravest friends. Wait for dark. Follow the route.", "road"],
+            ["03", "Listen", "Press play at every stop. Hear what the city buried.", "waveform"],
+          ].map(([number, title, copy, motif]) => (
+            <HowItWorksCard
+              key={title}
+              number={number}
+              title={title}
+              copy={copy}
+              motif={motif as "key" | "road" | "waveform"}
+            />
           ))}
         </div>
       </section>
@@ -72,25 +96,27 @@ export default function Home() {
             <h2 className="mt-4 font-display text-5xl uppercase leading-none">
               It is all around you.
             </h2>
-            <p className="mt-5 text-bone-dim">
+            <p className="mt-5 max-w-xl leading-7 text-bone-dim">
               Every dot suggests the shape of the tour without marking a real
               stop. We moved the signal so you cannot cheat. Pay the toll and
               we hand you the real ones.
             </p>
-            <p className="mt-5 font-mono text-xs uppercase tracking-[0.18em] text-ash">
-              {tour.stopCountDisplay}. Citywide. None of them marked here are
-              exactly where they are.
+            <p className="mt-5 flex gap-2 font-mono text-xs uppercase leading-6 tracking-[0.04em] text-ash">
+              <span className="shrink-0 text-sick">&gt;</span>
+              <span>
+                {tour.stopCountDisplay}, citywide. The pins below are decoys.
+              </span>
             </p>
             <div className="mt-7 grid grid-cols-3 gap-3">
               {tour.categoryStats.slice(0, 3).map((stat) => (
                 <div
                   key={stat.category}
-                  className="min-w-0 border border-ash-line bg-background/40 p-3 sm:p-4"
+                  className="min-w-0 rounded-sm border border-ash-line border-t-2 border-t-blood/60 bg-background/70 px-3 py-4 sm:p-5"
                 >
-                  <p className="font-display text-[2.6rem] leading-none text-blood-hot sm:text-4xl">
+                  <p className="font-display text-[2.1rem] leading-none text-blood-hot sm:text-4xl">
                     {stat.count}
                   </p>
-                  <p className="mt-2 break-words font-mono text-[0.56rem] uppercase leading-tight text-ash sm:text-xs">
+                  <p className="mt-2 break-words font-mono text-[0.62rem] uppercase leading-tight tracking-[0.12em] text-ash sm:text-xs">
                     {stat.category}
                   </p>
                 </div>
@@ -103,16 +129,17 @@ export default function Home() {
 
       <section className="border-y border-ash-line bg-paper/70 px-5 py-20 sm:px-8">
         <div className="mx-auto max-w-7xl">
-          <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
-            <div>
-              <p className="font-mono text-xs uppercase tracking-[0.28em] text-sick">
-                Redacted reports
-              </p>
-              <h2 className="mt-4 font-display text-5xl uppercase leading-none">
-                The answer is paid.
-              </h2>
-            </div>
-            <TourCta tour={tour} />
+          <div>
+            <p className="font-mono text-xs uppercase tracking-[0.28em] text-sick">
+              Redacted reports
+            </p>
+            <h2 className="mt-4 font-display text-5xl uppercase leading-none">
+              Unlock the complete case files.
+            </h2>
+            <p className="mt-4 max-w-2xl text-bone-dim">
+              Get access to the full investigation: audio, maps, redacted
+              reports, and every stop sealed behind the public preview.
+            </p>
           </div>
           <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {tour.teasers.map((teaser) => (
@@ -129,7 +156,7 @@ export default function Home() {
               className="mt-4 inline-flex h-11 items-center justify-center gap-2 rounded-sm bg-blood px-4 font-mono text-xs uppercase text-bone transition hover:bg-blood-hot"
             >
               <ArrowRight size={16} aria-hidden />
-              Unlock the tour
+              Unlock the files {tour.priceDisplay}
             </Link>
           </div>
         </div>
@@ -230,9 +257,13 @@ export default function Home() {
               </span>
             </div>
           </div>
-          <CityVoteForm defaultCity="medicine hat" />
+          <div className="grid gap-4">
+            <FreeFileForm />
+            <CityVoteForm defaultCity="medicine hat" />
+          </div>
         </div>
       </section>
+      <StickyBuyBar tour={tour} />
     </main>
   );
 }

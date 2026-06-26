@@ -1,3 +1,4 @@
+import { HowItWorksCard } from "@/components/how-it-works-card";
 import { PageHero } from "@/components/page-hero";
 import { pageMetadata, seo } from "@/lib/seo";
 
@@ -19,28 +20,34 @@ export default function HowItWorksPage() {
               "01",
               "Unlock",
               "Buy a product once. Audio tours unlock the narrated route. GPS guides download instantly. No subscription, no expiry.",
+              "key",
             ],
             [
               "02",
               "Gather",
               "Wait for dark. Round up the people you trust to keep their nerve. Fill the tank.",
+              "road",
             ],
             [
               "03",
               "Drive",
               "For audio tours, follow the route and press play at each stop. For GPS guides, pick your category, pick your night, and navigate safely.",
+              "route",
             ],
             [
               "04",
               "Listen",
               "You are responsible for the car, the phone, and the law. Stay outside restricted areas and let the story do the work.",
+              "waveform",
             ],
-          ].map(([number, title, copy]) => (
-            <article key={title} className="border border-ash-line bg-paper p-5">
-              <p className="font-mono text-xs text-blood-hot">{number}</p>
-              <h2 className="mt-4 font-display text-4xl uppercase">{title}</h2>
-              <p className="mt-3 text-sm leading-6 text-bone-dim">{copy}</p>
-            </article>
+          ].map(([number, title, copy, motif]) => (
+            <HowItWorksCard
+              key={title}
+              number={number}
+              title={title}
+              copy={copy}
+              motif={motif as "key" | "road" | "waveform" | "route"}
+            />
           ))}
         </div>
         <div className="mx-auto mt-10 max-w-4xl border border-ash-line bg-background p-6">

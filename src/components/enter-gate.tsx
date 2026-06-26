@@ -12,11 +12,11 @@ export function EnterGate() {
     return (
       <div className="fixed inset-0 z-[90] flex items-center justify-center bg-background px-5">
         <div className="max-w-md text-center">
-          <p className="flicker font-display text-6xl uppercase text-blood-hot">
+          <p className="font-display text-6xl uppercase text-blood-hot">
             Dark Drives
           </p>
           <p className="mt-4 font-mono text-sm uppercase tracking-[0.24em] text-sick">
-            Every drive has a dark side.
+            Open the file after dark.
           </p>
           <p className="mt-8 text-xl leading-8 text-bone">
             <span>This is meant to be heard.</span>

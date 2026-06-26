@@ -7,6 +7,7 @@ export type TeaserCard = {
   id: string;
   category: string;
   hook: string;
+  audioSrc?: string;
 };
 
 export type Tour = {
@@ -19,7 +20,6 @@ export type Tour = {
   imprint: ProductImprint;
   format: ProductFormat;
   formatBadge: string;
-  tierLabel: string;
   title: string;
   tagline: string;
   status: TourStatus;
@@ -69,7 +69,6 @@ export const tours: Tour[] = [
     imprint: "Off Grid Sask",
     format: "audio-tour",
     formatBadge: "AUDIO DRIVING TOUR",
-    tierLabel: "Premium",
     title: "The Dark Side of Saskatoon",
     tagline: "A full audio driving tour through the city after the lights quit.",
     status: commerceMode === "live" ? "live" : "preorder",
@@ -86,6 +85,7 @@ export const tours: Tour[] = [
     stopCountDisplay: "40+ real locations",
     locationCountDisplay: "40+ real locations",
     coverImage: "/images/saskatoon-night-road.svg",
+    trailerAudio: "/audio/dark-drives-hero-sample-mixed.mp3",
     categoryStats: [
       { category: "True crime", count: 9 },
       { category: "Hauntings", count: 11 },
@@ -141,6 +141,36 @@ export const tours: Tour[] = [
           "The tour is designed around public roads and safe places to stop. If any stop invites you out, use judgment and stay legal.",
       },
       {
+        question: "Can I do it at night?",
+        answer:
+          "Yes. The tour is built for after dark, but stay sober, use safe parking, and let a passenger handle the phone.",
+      },
+      {
+        question: "Do I need an app?",
+        answer:
+          "No separate app is planned for launch. You receive access instructions for the narrated route and audio when the tour opens.",
+      },
+      {
+        question: "Can I pause and continue later?",
+        answer:
+          "Yes. It is self-guided, so you can stop, restart, or split the route across nights.",
+      },
+      {
+        question: "Do I need headphones?",
+        answer:
+          "Headphones give the best atmosphere for passengers. If you play through the car, keep the volume safe for the driver.",
+      },
+      {
+        question: "Is it suitable for children?",
+        answer:
+          "No. The tour is built for adults and includes disturbing history, crime, hauntings, and mature themes.",
+      },
+      {
+        question: "Is the tour based on real events?",
+        answer:
+          "Yes. The stories draw from documented history, local legends, and reported accounts, with public pages kept spoiler-safe.",
+      },
+      {
         question: "Can I share it with friends?",
         answer:
           "One purchase is for personal use in one vehicle. Load the car, but do not repost, resell, or redistribute the route or audio.",
@@ -163,6 +193,7 @@ export const tours: Tour[] = [
         category: "TRUE CRIME",
         hook:
           "A man's body in the ditch. The case went cold. The voice still asking for help did not.",
+        audioSrc: "/audio/dark-drives-teaser-sample-mixed.mp3",
       },
       {
         id: "cursed-corner",
@@ -248,8 +279,7 @@ export const tours: Tour[] = [
     market: "CA",
     imprint: "Off Grid Sask",
     format: "gps-guide",
-    formatBadge: "GPS GUIDE // INSTANT DOWNLOAD",
-    tierLabel: "Instant guide",
+    formatBadge: "GPS GUIDE",
     title: "Regina's Most Haunted Places",
     tagline:
       "25+ haunted buildings, paranormal places, and local legends in the Queen City. Real locations, real stories, explore at your own risk.",
@@ -366,8 +396,7 @@ export const tours: Tour[] = [
     market: "CA",
     imprint: "Off Grid Sask",
     format: "gps-guide",
-    formatBadge: "GPS GUIDE // INSTANT DOWNLOAD",
-    tierLabel: "Instant guide",
+    formatBadge: "GPS GUIDE",
     title: "Lethbridge's Most Haunted Places",
     tagline:
       "15 haunted places where the coulees swallow sound and the bridge carries more than trains. Real locations, real stories, explore at your own risk.",
@@ -484,8 +513,7 @@ export const tours: Tour[] = [
     market: "US",
     imprint: "Creepy GPS Adventures",
     format: "mega-guide",
-    formatBadge: "MEGA GUIDE // 150+ LOCATIONS // INSTANT DOWNLOAD",
-    tierLabel: "Value tier",
+    formatBadge: "MEGA GUIDE // 150+ LOCATIONS",
     title: "Ohio Creepy GPS Adventure Guide",
     tagline:
       "Over 150 GPS-mapped locations across the whole state. Abandoned asylums, haunted roads, Bigfoot country, tunnels, satanic ruins, and the fields where Ohio watches the sky. Explore safe, drive sober.",
@@ -607,7 +635,6 @@ export const tours: Tour[] = [
     imprint: "Dark Drives",
     format: "bundle",
     formatBadge: "ALL ACCESS // BEST VALUE",
-    tierLabel: "Bundle",
     title: "Dark Drives All Access",
     tagline:
       "Every launch product in one unlock: the Saskatoon audio tour, Regina and Lethbridge GPS guides, and the 150+ location Ohio mega guide.",

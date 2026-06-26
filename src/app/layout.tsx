@@ -33,8 +33,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full">
-      <body className="film-grain min-h-full bg-background text-bone antialiased">
+    <html lang="en" className="h-full" suppressHydrationWarning>
+      <body
+        className="film-grain min-h-full bg-background text-bone antialiased"
+        suppressHydrationWarning
+      >
         <Header />
         {children}
         <Footer />
