@@ -29,7 +29,7 @@ export function ProductCard({ product }: { product: Tour }) {
           {product.formatBadge}
         </p>
       </div>
-      <h3 className="mt-5 font-display text-4xl uppercase leading-none text-bone">
+      <h3 className="mt-5 font-display text-4xl uppercase leading-[1.12] text-bone sm:leading-[1.08]">
         {product.title}
       </h3>
       <p className="mt-4 text-sm leading-6 text-bone-dim">{product.tagline}</p>
