@@ -108,6 +108,22 @@ a {
   will-change: opacity, filter, text-shadow, color;
 }
 
+.logo-flicker {
+  color: var(--blood-hot);
+  text-shadow:
+    0 0 8px rgba(179, 0, 15, 0.3),
+    0 0 24px rgba(179, 0, 15, 0.16);
+  will-change: opacity, filter, text-shadow, color;
+}
+
+.logo-flicker-header {
+  animation: logo-flicker-header 31.9s linear infinite;
+}
+
+.logo-flicker-footer {
+  animation: logo-flicker-footer 37.4s linear infinite;
+}
+
 .redacted {
   display: inline-block;
   min-width: 5.5rem;
@@ -226,6 +242,134 @@ a {
     text-shadow:
       0 0 8px rgba(179, 0, 15, 0.28),
       0 0 22px rgba(179, 0, 15, 0.14);
+  }
+}
+
+@keyframes logo-flicker-header {
+  0%,
+  12.8%,
+  29.4%,
+  29.9%,
+  52.1%,
+  73.65%,
+  74.4%,
+  100% {
+    color: var(--blood-hot);
+    opacity: 1;
+    filter: brightness(1.02);
+    text-shadow:
+      0 0 8px rgba(179, 0, 15, 0.3),
+      0 0 24px rgba(179, 0, 15, 0.16);
+  }
+  13.05% {
+    opacity: 0.66;
+    filter: brightness(0.78);
+    text-shadow: none;
+  }
+  13.18% {
+    opacity: 1;
+    filter: brightness(1.14);
+    text-shadow:
+      0 0 14px rgba(179, 0, 15, 0.44),
+      0 0 34px rgba(179, 0, 15, 0.24);
+  }
+  13.43% {
+    opacity: 0.82;
+    filter: brightness(0.9);
+    text-shadow: none;
+  }
+  29.7% {
+    opacity: 0.52;
+    filter: brightness(0.72);
+    text-shadow: none;
+  }
+  52.33% {
+    opacity: 0.74;
+    filter: brightness(0.84);
+    text-shadow: none;
+  }
+  52.48% {
+    opacity: 1;
+    filter: brightness(1.1);
+    text-shadow:
+      0 0 12px rgba(179, 0, 15, 0.38),
+      0 0 28px rgba(179, 0, 15, 0.2);
+  }
+  73.9% {
+    opacity: 0.58;
+    filter: brightness(0.76);
+    text-shadow: none;
+  }
+  74.08% {
+    opacity: 1;
+    filter: brightness(1.13);
+    text-shadow:
+      0 0 15px rgba(179, 0, 15, 0.42),
+      0 0 36px rgba(179, 0, 15, 0.22);
+  }
+}
+
+@keyframes logo-flicker-footer {
+  0%,
+  21.6%,
+  22.2%,
+  47.8%,
+  68.1%,
+  68.7%,
+  91.3%,
+  100% {
+    color: var(--blood-hot);
+    opacity: 1;
+    filter: brightness(1.02);
+    text-shadow:
+      0 0 8px rgba(179, 0, 15, 0.3),
+      0 0 24px rgba(179, 0, 15, 0.16);
+  }
+  21.82% {
+    opacity: 0.72;
+    filter: brightness(0.82);
+    text-shadow: none;
+  }
+  21.96% {
+    opacity: 1;
+    filter: brightness(1.09);
+    text-shadow:
+      0 0 12px rgba(179, 0, 15, 0.36),
+      0 0 30px rgba(179, 0, 15, 0.18);
+  }
+  48.04% {
+    opacity: 0.5;
+    filter: brightness(0.72);
+    text-shadow: none;
+  }
+  48.18% {
+    opacity: 1;
+    filter: brightness(1.12);
+    text-shadow:
+      0 0 14px rgba(179, 0, 15, 0.4),
+      0 0 34px rgba(179, 0, 15, 0.22);
+  }
+  48.39% {
+    opacity: 0.84;
+    filter: brightness(0.9);
+    text-shadow: none;
+  }
+  68.32% {
+    opacity: 0.77;
+    filter: brightness(0.86);
+    text-shadow: none;
+  }
+  91.52% {
+    opacity: 0.6;
+    filter: brightness(0.78);
+    text-shadow: none;
+  }
+  91.74% {
+    opacity: 1;
+    filter: brightness(1.1);
+    text-shadow:
+      0 0 13px rgba(179, 0, 15, 0.38),
+      0 0 32px rgba(179, 0, 15, 0.2);
   }
 }
 
