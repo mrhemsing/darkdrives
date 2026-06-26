@@ -5,9 +5,10 @@ import { Volume2, VolumeX } from "lucide-react";
 import { captureEvent } from "@/components/analytics-events";
 
 export function EnterGate() {
-  const [entered, setEntered] = useState(false);
+  const [dismissed, setDismissed] = useState(false);
+  const [signalArmed, setSignalArmed] = useState(false);
 
-  if (!entered) {
+  if (!dismissed) {
     return (
       <div className="fixed inset-0 z-[90] flex items-center justify-center bg-background px-5">
         <div className="max-w-md text-center">
@@ -23,7 +24,8 @@ export function EnterGate() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
             <button
               onClick={() => {
-                setEntered(true);
+                setSignalArmed(true);
+                setDismissed(true);
                 captureEvent("sample_listen", { state: "armed" });
               }}
               className="inline-flex h-12 items-center justify-center gap-2 rounded-sm bg-blood px-5 font-mono text-sm uppercase text-bone transition hover:bg-blood-hot"
@@ -33,7 +35,8 @@ export function EnterGate() {
             </button>
             <button
               onClick={() => {
-                setEntered(true);
+                setSignalArmed(false);
+                setDismissed(true);
                 captureEvent("sample_listen", { state: "muted" });
               }}
               className="inline-flex h-12 items-center justify-center gap-2 rounded-sm border border-ash-line px-5 font-mono text-sm uppercase text-bone transition hover:border-sick hover:text-sick"
@@ -50,14 +53,14 @@ export function EnterGate() {
   return (
     <button
       onClick={() => {
-        setEntered((value) => !value);
-        captureEvent("sample_listen", { state: entered ? "muted" : "armed" });
+        setSignalArmed((value) => !value);
+        captureEvent("sample_listen", { state: signalArmed ? "muted" : "armed" });
       }}
       className="inline-flex h-12 items-center justify-center gap-2 rounded-sm border border-ash-line px-5 font-mono text-sm uppercase text-bone transition hover:border-sick hover:text-sick"
-      aria-pressed={entered}
+      aria-pressed={signalArmed}
     >
-      {entered ? <Volume2 size={18} aria-hidden /> : <VolumeX size={18} aria-hidden />}
-      {entered ? "Signal armed" : "Enter muted"}
+      {signalArmed ? <Volume2 size={18} aria-hidden /> : <VolumeX size={18} aria-hidden />}
+      {signalArmed ? "Signal armed" : "Hear the signal"}
     </button>
   );
 }
