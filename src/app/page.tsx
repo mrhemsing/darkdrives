@@ -122,7 +122,7 @@ export default function Home() {
               </figure>
             ))}
           </div>
-          <div className="mt-10 grid gap-8 min-[840px]:grid-cols-[0.88fr_1.12fr] min-[840px]:items-stretch min-[840px]:gap-11">
+          <div className="mt-10 grid gap-8 min-[840px]:grid-cols-2 min-[840px]:items-stretch">
             <div className="flex flex-col gap-7">
               <div className="space-y-10">
                 <div>
