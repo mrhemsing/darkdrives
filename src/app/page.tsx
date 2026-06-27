@@ -78,7 +78,7 @@ export default function Home() {
           alt=""
           fill
           sizes="100vw"
-          className="pointer-events-none absolute inset-0 hidden h-full w-full object-cover object-center opacity-100 sm:block"
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover object-center opacity-20 sm:opacity-100"
           loading="lazy"
         />
         <div
