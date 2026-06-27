@@ -124,7 +124,7 @@ export default function Home() {
           </div>
           <div className="mt-10 grid gap-8 min-[840px]:grid-cols-[0.88fr_1.12fr] min-[840px]:items-stretch min-[840px]:gap-11">
             <div className="flex flex-col gap-7">
-              <div className="space-y-7">
+              <div className="space-y-10">
                 <div>
                   <p className="font-mono text-xs uppercase tracking-[0.28em] text-sick">
                     The map
