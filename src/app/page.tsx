@@ -140,7 +140,7 @@ export default function Home() {
                     full map and route come with the tour.
                   </p>
                 </div>
-                <div className="grid gap-3 sm:grid-cols-3 min-[840px]:grid-cols-3">
+                <div className="grid grid-cols-3 gap-3">
                   {tour.categoryStats.slice(0, 3).map((stat) => (
                     <div
                       key={stat.category}
