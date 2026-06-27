@@ -122,15 +122,42 @@ export default function Home() {
               </figure>
             ))}
           </div>
-          <div className="mt-10 grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-            <div>
-              <p className="font-mono text-xs uppercase tracking-[0.28em] text-sick">
-                The map
-              </p>
-              <p className="mt-4 max-w-xl text-lg leading-8 text-bone-dim">
-                40+ real haunted spots, scattered across the whole city. The
-                full map and route come with the tour.
-              </p>
+          <div className="mt-10 grid gap-8 min-[840px]:grid-cols-[0.88fr_1.12fr] min-[840px]:items-stretch min-[840px]:gap-11">
+            <div className="flex flex-col gap-7 min-[840px]:justify-between">
+              <div>
+                <p className="font-mono text-xs uppercase tracking-[0.28em] text-sick">
+                  The map
+                </p>
+                <h3 className="mt-4 font-display text-5xl uppercase leading-[1.15] sm:text-6xl sm:leading-[1.15]">
+                  It&apos;s all around you.
+                </h3>
+                <p className="mt-5 max-w-xl text-lg leading-8 text-bone-dim">
+                  40+ real haunted spots, scattered across the whole city. The
+                  full map and route come with the tour.
+                </p>
+              </div>
+              <div className="grid gap-3 sm:grid-cols-3 min-[840px]:grid-cols-3">
+                {tour.categoryStats.slice(0, 3).map((stat) => (
+                  <div
+                    key={stat.category}
+                    className="border border-ash-line border-t-2 border-t-blood bg-background px-4 py-3"
+                  >
+                    <p className="font-display text-4xl uppercase leading-none text-blood-hot">
+                      {stat.count}
+                    </p>
+                    <p className="mt-2 font-mono text-[0.66rem] uppercase leading-4 tracking-[0.08em] text-ash">
+                      {stat.category}
+                    </p>
+                  </div>
+                ))}
+              </div>
+              <Link
+                href="/saskatoon#buy"
+                className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-sm bg-blood px-5 font-mono text-sm uppercase text-bone transition hover:bg-blood-hot"
+              >
+                Get the tour {tour.priceDisplay}
+                <ArrowRight size={18} aria-hidden />
+              </Link>
             </div>
             <TeaserMap pins={tour.decoyPins ?? []} />
           </div>
