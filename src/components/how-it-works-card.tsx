@@ -77,7 +77,7 @@ export function HowItWorksCard({
       <span className="absolute left-3 top-3 z-10 h-4 w-4 border-l border-t border-bone/50" />
       <span className="absolute bottom-3 right-3 z-10 h-4 w-4 border-b border-r border-bone/50" />
       <Motif type={motif} />
-      <div className="relative z-10 my-auto">
+      <div className="relative z-10">
         <p className="flicker mb-3 font-mono text-sm font-medium uppercase tracking-[0.18em] text-blood-hot">
           {number}
         </p>
