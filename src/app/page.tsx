@@ -72,8 +72,20 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-y border-ash-line bg-paper/70 px-5 py-14 sm:px-8">
-        <div className="mx-auto max-w-7xl">
+      <section className="relative overflow-hidden border-y border-ash-line bg-paper/70 px-5 py-14 sm:px-8">
+        <Image
+          src="/images/dark-drives-fb-car.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          className="pointer-events-none absolute inset-0 hidden h-full w-full object-cover object-center opacity-20 sm:block"
+          loading="lazy"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 hidden bg-[linear-gradient(180deg,rgba(10,9,8,0.88),rgba(10,9,8,0.72)_42%,rgba(10,9,8,0.9)),radial-gradient(circle_at_50%_22%,transparent_0,rgba(10,9,8,0.42)_58%)] sm:block"
+        />
+        <div className="relative mx-auto max-w-7xl">
           <p className="font-mono text-xs uppercase tracking-[0.28em] text-sick">
             The drive
           </p>
