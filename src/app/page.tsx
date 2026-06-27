@@ -89,7 +89,18 @@ export default function Home() {
           <p className="font-mono text-xs uppercase tracking-[0.28em] text-sick">
             The drive
           </p>
-          <div className="mt-6 grid gap-4 lg:grid-cols-2">
+          <figure className="mt-6 overflow-hidden rounded-sm border border-ash-line bg-background sm:hidden">
+            <Image
+              src="/images/dark-drives-fb-car.jpg"
+              alt="A car parked in a dark, moody landscape."
+              width={800}
+              height={534}
+              sizes="100vw"
+              className="h-auto w-full object-cover"
+              loading="lazy"
+            />
+          </figure>
+          <div className="mt-4 grid gap-4 sm:mt-6 lg:grid-cols-2">
             {[
               {
                 src: "/images/dark-drives-face-in-bushes.png",
