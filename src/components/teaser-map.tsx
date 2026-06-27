@@ -30,7 +30,7 @@ export function TeaserMap({
   const routePath = visiblePins
     .map((pin, index) => `${index === 0 ? "M" : "L"} ${pin.x.toFixed(1)} ${pin.y.toFixed(1)}`)
     .join(" ");
-  const glowId = numbered ? "map-glow-route" : "map-glow-decoy";
+  const glowId = numbered ? "map-glow-route" : "map-glow-spots";
 
   return (
     <div className="relative aspect-[1.15/1] min-h-[20rem] overflow-hidden rounded-md border border-ash-line bg-[radial-gradient(120%_90%_at_50%_30%,#10120d_0%,#0a0a08_70%)] lg:min-h-[420px]">
@@ -39,7 +39,7 @@ export function TeaserMap({
         viewBox="0 0 400 348"
         preserveAspectRatio="xMidYMid slice"
         role="img"
-        aria-label="Stylized decoy map with fake route lines and red signal markers"
+        aria-label="Stylized city map with route lines and red location markers"
       >
         <defs>
           <filter id={glowId}>
@@ -151,10 +151,10 @@ export function TeaserMap({
       </svg>
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_100%_at_50%_40%,transparent_55%,rgba(0,0,0,0.6)_100%)]" />
       <div className="absolute bottom-4 right-4 hidden rounded-sm border border-ash-line bg-background/80 px-3 py-2 font-mono text-[0.65rem] uppercase text-ash sm:block">
-        {numbered ? "Preview route / exact stops hidden" : "Signal displaced / coordinates scrambled"}
+        {numbered ? "Preview route / exact stops hidden" : "40+ spots across Saskatoon"}
       </div>
       <div className="absolute left-3 top-3 rounded-sm border border-sick/45 bg-background/75 px-3 py-2 font-mono text-[0.68rem] uppercase tracking-[0.14em] text-sick">
-        {numbered ? "Route preview, no story details" : "Decoy map, no real stops"}
+        {numbered ? "Route preview, no story details" : "Full route comes with the tour"}
       </div>
       {numbered ? (
         <div className="absolute bottom-4 left-4 flex gap-2 font-mono text-[0.65rem] uppercase">

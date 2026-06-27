@@ -32,10 +32,9 @@ export default function Home() {
             Everything you are about to hear happened here.
           </h1>
           <p className="mt-6 max-w-xl text-base leading-7 text-bone-dim sm:text-lg">
-            You have driven past all of it. You just never looked. The Dark
-            Side of Saskatoon is a self-guided audio tour you run after dark.
-            Real places. Real records. A GPS route on your phone. One city you
-            thought you knew.
+            Grab your friends, get in the car after dark, and press play. As
+            you drive, a voice tells you the true, terrifying story behind every
+            haunted place you pass. 40+ of them, all over Saskatoon.
           </p>
           <HeroSignal audioSrc={tour.trailerAudio} />
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
@@ -44,25 +43,17 @@ export default function Home() {
               className="inline-flex h-12 items-center justify-center gap-2 rounded-sm bg-blood px-5 font-mono text-sm uppercase text-bone transition hover:bg-blood-hot"
             >
               <ArrowRight size={18} aria-hidden />
-              Unlock the tour
-            </Link>
-            <Link
-              href="/saskatoon#preview"
-              className="inline-flex h-12 items-center justify-center gap-2 rounded-sm border border-ash-line px-5 font-mono text-sm uppercase text-bone transition hover:border-sick hover:text-sick"
-            >
-              <Radio size={18} aria-hidden />
-              Preview the tour
+              Get the tour {tour.priceDisplay}
             </Link>
           </div>
           <div className="mt-6 grid gap-2 border-y border-ash-line/80 py-4 font-mono text-[0.68rem] uppercase leading-5 tracking-[0.04em] text-ash sm:flex sm:flex-wrap sm:gap-x-4">
-            <span>Saskatoon audio tour</span>
-            <span>{tour.stopCountDisplay}</span>
-            <span>GPS route on your phone</span>
-            <span>Founding price {tour.priceDisplay}</span>
-            <span>Drive tonight</span>
+            <span>Instant access</span>
+            <span>Works on your phone</span>
+            <span>No app to download</span>
+            <span>Done in one night</span>
           </div>
           <p className="mt-4 max-w-xl text-sm leading-6 text-bone-dim">
-            Every road on this tour was driven by us, at the hours the stories happen.
+            Made for a girls&apos; night, a date, or a dare. Bring someone who scares easy.
           </p>
         </div>
       </section>
@@ -70,9 +61,9 @@ export default function Home() {
       <section className="border-b border-ash-line bg-background px-5 py-12 sm:px-8">
         <div className="mx-auto grid max-w-7xl gap-4 md:grid-cols-3">
           {[
-            ["01", "Unlock", "Unlock the tour once. It is yours for good.", "key"],
-            ["02", "Drive", "Gather your bravest friends. Wait for dark. Follow the route.", "road"],
-            ["03", "Listen", "Press play at every stop. Hear what the city buried.", "waveform"],
+            ["01", "Get the tour", "It lands on your phone instantly.", "key"],
+            ["02", "Grab your friends", "Wait for dark. Pile into one car.", "road"],
+            ["03", "Press play and drive", "We tell you everything. You just hold on.", "waveform"],
           ].map(([number, title, copy, motif]) => (
             <HowItWorksCard
               key={title}
@@ -85,97 +76,27 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-5 py-20 sm:px-8">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-          <div>
-            <p className="font-mono text-xs uppercase tracking-[0.28em] text-sick">
-              The map
-            </p>
-            <h2 className="mt-4 font-display text-5xl uppercase leading-[1.15]">
-              It is all around you.
-            </h2>
-            <p className="mt-5 max-w-xl leading-7 text-bone-dim">
-              Every dot is a decoy. We scrambled the signal so you cannot
-              cheat. Unlock the tour and we hand you the real GPS map for your
-              phone.
-            </p>
-            <p className="mt-5 flex gap-2 font-mono text-xs uppercase leading-6 tracking-[0.04em] text-ash">
-              <span className="shrink-0 text-sick">&gt;</span>
-              <span>
-                {tour.stopCountDisplay}, citywide. The pins below are decoys.
-              </span>
-            </p>
-            <div className="mt-7 grid grid-cols-3 gap-3">
-              {tour.categoryStats.slice(0, 3).map((stat) => (
-                <div
-                  key={stat.category}
-                  className="min-w-0 rounded-sm border border-ash-line border-t-2 border-t-blood/60 bg-background/70 px-3 py-4 sm:p-5"
-                >
-                  <p className="font-display text-[2.1rem] leading-none text-blood-hot sm:text-4xl">
-                    {stat.count}
-                  </p>
-                  <p className="mt-2 break-words font-mono text-[0.62rem] uppercase leading-tight tracking-[0.12em] text-ash sm:text-xs">
-                    {stat.category}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-          <TeaserMap pins={tour.decoyPins ?? []} />
-        </div>
-      </section>
-
-      <section className="border-y border-ash-line bg-background px-5 py-16 sm:px-8">
-        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1fr_0.95fr] lg:items-center">
-          <div>
-            <p className="font-mono text-xs uppercase tracking-[0.28em] text-sick">
-              Self-guided driving tour map
-            </p>
-            <h2 className="mt-4 font-display text-5xl uppercase leading-[1.15] text-bone sm:text-6xl sm:leading-[1.15]">
-              Explore all 40+ locations using GPS on your phone.
-            </h2>
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-bone-dim">
-              Includes backstories, urban legends, narrated audio, and the
-              route built for one dark drive through Saskatoon.
-            </p>
-          </div>
-          <div className="border border-ash-line bg-paper p-5">
-            <p className="font-mono text-xs uppercase tracking-[0.18em] text-blood-hot">
-              Disclaimer
-            </p>
-            <p className="mt-3 text-lg leading-8 text-bone">
-              Ages {tour.minimumAge}+. Keep your doors locked. Passenger runs
-              the phone. Drive safe, stay sober, and do not enter private,
-              restricted, or unsafe places.
-            </p>
-            <p className="mt-5 font-display text-3xl uppercase text-blood-hot">
-              Instant access {tour.priceDisplay}
-            </p>
-            <p className="mt-2 font-mono text-[0.68rem] uppercase leading-5 tracking-[0.04em] text-ash">
-              Entertainment only // Respect property // Obey signs // Drive sober
-            </p>
-          </div>
-        </div>
-      </section>
-
       <section className="border-y border-ash-line bg-paper/70 px-5 py-14 sm:px-8">
         <div className="mx-auto max-w-7xl">
           <p className="font-mono text-xs uppercase tracking-[0.28em] text-sick">
             This is the drive
           </p>
+          <h2 className="mt-4 font-display text-5xl uppercase leading-[1.15]">
+            Here&apos;s the whole idea.
+          </h2>
           <div className="mt-6 grid gap-4 lg:grid-cols-2">
             {[
               {
                 src: "/images/dark-drives-face-in-bushes.png",
                 alt: "A pale face hidden in bushes outside a car at night.",
                 title: "You stay in the car.",
-                copy: "The stories happen outside the window.",
+                copy: "The scary stuff happens outside your window.",
               },
               {
                 src: "/images/dark-drives-window-face.png",
                 alt: "A dark abandoned building with a pale face in an upstairs window.",
                 title: "You press play.",
-                copy: "Then the stop tells you what happened there.",
+                copy: "The voice tells you what really happened there.",
               },
             ].map((image) => (
               <figure
@@ -203,6 +124,18 @@ export default function Home() {
                 </div>
               </figure>
             ))}
+          </div>
+          <div className="mt-10 grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+            <div>
+              <p className="font-mono text-xs uppercase tracking-[0.28em] text-sick">
+                The map
+              </p>
+              <p className="mt-4 max-w-xl text-lg leading-8 text-bone-dim">
+                40+ real haunted spots, scattered across the whole city. The
+                full map and route come with the tour.
+              </p>
+            </div>
+            <TeaserMap pins={tour.decoyPins ?? []} />
           </div>
         </div>
       </section>
@@ -265,8 +198,8 @@ export default function Home() {
             And many more sealed.
           </p>
           <p className="mt-4 max-w-3xl font-mono text-xs uppercase leading-6 tracking-[0.04em] text-ash">
-            Exact route, coordinates, stop order, and the full story behind
-            every name unlock the moment you buy.
+            The route, stop order, and the full story behind every name come
+            with the tour.
           </p>
         </div>
       </section>
@@ -275,6 +208,12 @@ export default function Home() {
         <div className="mx-auto mb-20 max-w-7xl">
           <p className="font-mono text-xs uppercase tracking-[0.28em] text-sick">
             Reports from the road
+          </p>
+          <h2 className="mt-4 font-display text-5xl uppercase leading-[1.15]">
+            People are filming their reactions. They are not okay.
+          </h2>
+          <p className="mt-4 max-w-2xl text-bone-dim">
+            Do yours. Tag #DarkDrives.
           </p>
           <div className="mt-6 grid gap-4 md:grid-cols-3">
             {[
@@ -311,11 +250,7 @@ export default function Home() {
               Saskatoon is waiting.
             </h2>
             <p className="mt-5 max-w-2xl text-bone-dim">
-              One city. Forty real places. A self-guided audio tour built for a
-              dark road and a full car.
-            </p>
-            <p className="mt-6 font-mono text-xl uppercase text-blood-hot">
-              Film your drive. If you make it through, tag it. #DarkDrives
+              One city. 40+ real haunted places. One night you will not forget.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <span className="inline-flex items-center gap-2 border border-ash-line px-3 py-2 font-mono text-xs text-bone-dim">
@@ -333,20 +268,21 @@ export default function Home() {
             </div>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
-                href="/saskatoon#preview"
-                className="inline-flex h-11 items-center justify-center gap-2 rounded-sm border border-ash-line px-4 font-mono text-xs uppercase text-bone transition hover:border-sick hover:text-sick"
-              >
-                <Radio size={16} aria-hidden />
-                Hear the sample
-              </Link>
-              <Link
                 href="/saskatoon#buy"
                 className="inline-flex h-11 items-center justify-center gap-2 rounded-sm bg-blood px-4 font-mono text-xs uppercase text-bone transition hover:bg-blood-hot"
               >
                 <ArrowRight size={16} aria-hidden />
-                Unlock the tour {tour.priceDisplay}
+                Get the tour {tour.priceDisplay}
               </Link>
             </div>
+            <p className="mt-4 font-mono text-xs uppercase leading-6 tracking-[0.04em] text-ash">
+              Instant access. On your phone. Do it tonight.
+            </p>
+            <p className="mt-6 max-w-3xl text-sm leading-6 text-bone-dim">
+              You never have to leave the car. The whole route is on normal
+              public roads. Just bring friends, drive sober, keep your doors
+              locked, and have a blast. {tour.minimumAge}+.
+            </p>
           </div>
         </div>
       </section>

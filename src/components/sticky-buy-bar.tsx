@@ -37,7 +37,7 @@ export function StickyBuyBar({ tour }: { tour: Tour }) {
           </p>
         </div>
         <div className="shrink-0">
-          <TourCta tour={tour} label="Unlock" compact showConsent={false} />
+          <TourCta tour={tour} label="Get the tour" compact showConsent={false} />
         </div>
       </div>
     </div>
