@@ -78,7 +78,7 @@ export default function Home() {
           alt=""
           fill
           sizes="100vw"
-          className="pointer-events-none absolute inset-0 hidden h-full w-full object-cover object-center opacity-20 sm:block"
+          className="pointer-events-none absolute inset-0 hidden h-full w-full object-cover object-center opacity-100 sm:block"
           loading="lazy"
         />
         <div
@@ -137,11 +137,11 @@ export default function Home() {
                   <p className="font-mono text-xs uppercase tracking-[0.28em] text-sick">
                     The map
                   </p>
-                  <h3 className="mt-4 font-display text-4xl uppercase leading-[1.15] min-[380px]:text-5xl sm:text-6xl sm:leading-[1.15] min-[840px]:!text-black">
-                    <span className="block whitespace-nowrap sm:inline sm:whitespace-normal min-[840px]:!text-black">
+                  <h3 className="mt-4 font-display text-4xl uppercase leading-[1.15] min-[380px]:text-5xl sm:text-6xl sm:leading-[1.15] min-[840px]:!text-bone">
+                    <span className="block whitespace-nowrap sm:inline sm:whitespace-normal min-[840px]:!text-bone">
                       Explore the dark
                     </span>{" "}
-                    <span className="block whitespace-nowrap sm:inline sm:whitespace-normal min-[840px]:!text-black">
+                    <span className="block whitespace-nowrap sm:inline sm:whitespace-normal min-[840px]:!text-bone">
                       side of Saskatoon
                     </span>
                   </h3>
