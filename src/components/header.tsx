@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { LogoMark } from "@/components/logo-mark";
 
 const nav = [
   ["Saskatoon", "/saskatoon"],
@@ -9,12 +10,16 @@ const nav = [
 export function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-ash-line/80 bg-background/82 backdrop-blur">
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-5 sm:px-8">
+      <div className="mx-auto flex h-24 max-w-7xl items-center justify-center gap-4 px-5 pt-2 sm:h-20 sm:px-8 sm:pt-0 lg:justify-between">
         <Link
           href="/"
-          className="logo-flicker logo-flicker-header font-logo whitespace-nowrap text-[2.44rem] uppercase leading-none sm:text-[2.56rem]"
+          className="inline-flex"
+          aria-label="Dark Drives home"
         >
-          Dark Drives
+          <LogoMark
+            flickerClassName="logo-flicker-header"
+            className="text-[4.05rem] sm:text-[2.56rem]"
+          />
         </Link>
         <nav className="hidden items-center gap-7 font-mono text-sm uppercase text-bone-dim lg:flex lg:text-base">
           {nav.map(([label, href]) => (
