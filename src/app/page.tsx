@@ -132,7 +132,7 @@ export default function Home() {
             <p className="font-mono text-xs uppercase tracking-[0.28em] text-sick">
               Self-guided driving tour map
             </p>
-            <h2 className="mt-4 font-display text-5xl uppercase leading-[1.15] text-bone sm:text-6xl sm:leading-[1.1]">
+            <h2 className="mt-4 font-display text-5xl uppercase leading-[1.15] text-bone sm:text-6xl sm:leading-[1.15]">
               Explore all 40+ locations using GPS on your phone.
             </h2>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-bone-dim">

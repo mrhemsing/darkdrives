@@ -38,6 +38,7 @@
   --font-display: "Oswald Variable", Impact, sans-serif;
   --font-mono: "JetBrains Mono Variable", ui-monospace, monospace;
   --text-5xl--line-height: 1.15;
+  --text-6xl--line-height: 1.15;
 }
 
 * {

@@ -89,7 +89,7 @@ export function ProductSalesPage({ product }: { product: Tour }) {
               <p className="font-mono text-xs uppercase tracking-[0.3em] text-sick">
                 Dark Drives // Saskatoon audio tour
               </p>
-              <h1 className="mt-5 max-w-4xl font-display text-6xl uppercase leading-none text-bone sm:text-8xl lg:text-9xl">
+              <h1 className="mt-5 max-w-4xl font-display text-6xl uppercase leading-[1.15] text-bone sm:text-8xl sm:leading-[1.06] lg:text-9xl">
                 Some stories refuse to stay buried.
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-bone-dim sm:text-xl">
