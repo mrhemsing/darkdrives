@@ -52,9 +52,6 @@ export default function Home() {
             <span>No app to download</span>
             <span>Done in one night</span>
           </div>
-          <p className="mt-4 max-w-xl text-sm leading-6 text-bone-dim">
-            Made for a girls&apos; night, a date, or a dare. Bring someone who scares easy.
-          </p>
         </div>
       </section>
 
