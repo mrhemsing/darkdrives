@@ -125,22 +125,69 @@ a {
 .logo-flicker {
   color: var(--blood-hot);
   text-shadow:
-    0 0 8px rgba(179, 0, 15, 0.3),
-    0 0 24px rgba(179, 0, 15, 0.16);
+    0 0 10px rgba(208, 0, 0, 0.46),
+    0 0 28px rgba(208, 0, 0, 0.26),
+    0 0 48px rgba(208, 0, 0, 0.12);
   will-change: opacity, filter, text-shadow, color;
 }
 
+.logo-mark {
+  position: relative;
+  padding-right: 0.38em;
+}
+
+.logo-mark-tm {
+  position: absolute;
+  top: -0.08em;
+  right: 0.07em;
+  font-family: var(--font-mono);
+  font-size: 0.2em;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+.header-brand {
+  color: var(--blood-hot);
+  text-decoration: none;
+}
+
+.header-city-label {
+  width: 100%;
+  margin-top: -0.1rem;
+  color: var(--sick);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.5em;
+  line-height: 1;
+  text-align: center;
+  text-indent: 0.5em;
+  text-transform: uppercase;
+}
+
 .logo-flicker-header {
-  animation: logo-flicker-header 31.9s linear infinite;
+  animation: logo-bulb-flicker-header 17.8s linear infinite;
 }
 
 .logo-flicker-footer {
-  animation: logo-flicker-footer 37.4s linear infinite;
+  animation: logo-bulb-flicker-footer 22.9s linear infinite;
+}
+
+.logo-flicker-gate {
+  animation: logo-bulb-flicker-gate 15.6s linear infinite;
 }
 
 @media (max-width: 639px) {
   .logo-flicker-header {
-    animation: logo-flicker-header-mobile 24.7s linear infinite;
+    animation: logo-bulb-flicker-mobile 13.8s linear infinite;
+  }
+
+  .header-city-label {
+    margin-top: -0.28rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.58em;
+    text-indent: 0.58em;
   }
 }
 
@@ -450,6 +497,197 @@ a {
     text-shadow:
       0 0 13px rgba(179, 0, 15, 0.38),
       0 0 32px rgba(179, 0, 15, 0.2);
+  }
+}
+
+@keyframes logo-bulb-flicker-header {
+  0%,
+  8.8%,
+  9.7%,
+  28.8%,
+  29.8%,
+  56.2%,
+  57.5%,
+  82.4%,
+  83.15%,
+  100% {
+    opacity: 1;
+    filter: brightness(1.12) saturate(1.05);
+    text-shadow:
+      0 0 10px rgba(208, 0, 0, 0.5),
+      0 0 30px rgba(208, 0, 0, 0.28),
+      0 0 52px rgba(208, 0, 0, 0.14);
+  }
+  9.04%,
+  29.08%,
+  56.58%,
+  82.72% {
+    opacity: 0.18;
+    filter: brightness(0.45) saturate(0.8);
+    text-shadow: none;
+  }
+  9.18%,
+  29.24%,
+  56.78%,
+  82.86% {
+    opacity: 1;
+    filter: brightness(1.42) saturate(1.2);
+    text-shadow:
+      0 0 16px rgba(255, 22, 35, 0.7),
+      0 0 42px rgba(208, 0, 0, 0.4),
+      0 0 70px rgba(208, 0, 0, 0.2);
+  }
+  9.32%,
+  56.96% {
+    opacity: 0.08;
+    filter: brightness(0.28);
+    text-shadow: none;
+  }
+  9.46%,
+  57.12% {
+    opacity: 0.92;
+    filter: brightness(1.26);
+  }
+}
+
+@keyframes logo-bulb-flicker-mobile {
+  0%,
+  7.2%,
+  8.15%,
+  21.4%,
+  22.25%,
+  42.2%,
+  43.15%,
+  68.3%,
+  69.05%,
+  100% {
+    opacity: 1;
+    filter: brightness(1.14) saturate(1.05);
+    text-shadow:
+      0 0 10px rgba(208, 0, 0, 0.52),
+      0 0 32px rgba(208, 0, 0, 0.3),
+      0 0 56px rgba(208, 0, 0, 0.16);
+  }
+  7.42%,
+  21.62%,
+  42.48%,
+  68.56% {
+    opacity: 0.12;
+    filter: brightness(0.34);
+    text-shadow: none;
+  }
+  7.56%,
+  21.82%,
+  42.64%,
+  68.72% {
+    opacity: 1;
+    filter: brightness(1.46) saturate(1.2);
+    text-shadow:
+      0 0 18px rgba(255, 22, 35, 0.72),
+      0 0 46px rgba(208, 0, 0, 0.42),
+      0 0 76px rgba(208, 0, 0, 0.22);
+  }
+  7.7%,
+  42.8% {
+    opacity: 0.05;
+    filter: brightness(0.24);
+    text-shadow: none;
+  }
+  7.84%,
+  42.96% {
+    opacity: 0.9;
+    filter: brightness(1.2);
+  }
+}
+
+@keyframes logo-bulb-flicker-footer {
+  0%,
+  17.7%,
+  18.55%,
+  46.4%,
+  47.3%,
+  74.8%,
+  75.6%,
+  100% {
+    opacity: 1;
+    filter: brightness(1.08);
+    text-shadow:
+      0 0 9px rgba(208, 0, 0, 0.46),
+      0 0 28px rgba(208, 0, 0, 0.26),
+      0 0 48px rgba(208, 0, 0, 0.12);
+  }
+  17.96%,
+  46.7%,
+  75.08% {
+    opacity: 0.16;
+    filter: brightness(0.38);
+    text-shadow: none;
+  }
+  18.1%,
+  46.86%,
+  75.24% {
+    opacity: 1;
+    filter: brightness(1.34);
+    text-shadow:
+      0 0 15px rgba(255, 22, 35, 0.62),
+      0 0 38px rgba(208, 0, 0, 0.34),
+      0 0 62px rgba(208, 0, 0, 0.18);
+  }
+  18.24%,
+  75.38% {
+    opacity: 0.34;
+    filter: brightness(0.6);
+    text-shadow: none;
+  }
+}
+
+@keyframes logo-bulb-flicker-gate {
+  0%,
+  6.6%,
+  7.65%,
+  25.9%,
+  26.75%,
+  51.2%,
+  52.15%,
+  79.4%,
+  80.15%,
+  100% {
+    opacity: 1;
+    filter: brightness(1.16) saturate(1.08);
+    text-shadow:
+      0 0 12px rgba(208, 0, 0, 0.56),
+      0 0 36px rgba(208, 0, 0, 0.32),
+      0 0 64px rgba(208, 0, 0, 0.18);
+  }
+  6.86%,
+  26.18%,
+  51.48%,
+  79.66% {
+    opacity: 0.1;
+    filter: brightness(0.3);
+    text-shadow: none;
+  }
+  7.02%,
+  26.34%,
+  51.64%,
+  79.82% {
+    opacity: 1;
+    filter: brightness(1.5) saturate(1.22);
+    text-shadow:
+      0 0 18px rgba(255, 22, 35, 0.76),
+      0 0 48px rgba(208, 0, 0, 0.44),
+      0 0 82px rgba(208, 0, 0, 0.24);
+  }
+  7.18%,
+  51.8% {
+    opacity: 0.04;
+    filter: brightness(0.22);
+    text-shadow: none;
+  }
+  7.34%,
+  51.96% {
+    opacity: 0.94;
+    filter: brightness(1.28);
   }
 }
 
