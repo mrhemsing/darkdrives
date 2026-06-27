@@ -137,7 +137,7 @@ export default function Home() {
                   <p className="font-mono text-xs uppercase tracking-[0.28em] text-sick">
                     The map
                   </p>
-                  <h3 className="mt-4 font-display text-4xl uppercase leading-[1.15] min-[380px]:text-5xl sm:text-6xl sm:leading-[1.15]">
+                  <h3 className="mt-4 font-display text-4xl uppercase leading-[1.15] min-[380px]:text-5xl sm:text-6xl sm:leading-[1.15] sm:text-black">
                     <span className="block whitespace-nowrap sm:inline sm:whitespace-normal">
                       Explore the dark
                     </span>{" "}
