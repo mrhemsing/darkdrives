@@ -79,7 +79,7 @@ export const tours: Tour[] = [
     deliverable: "Narrated audio tour",
     launchSeason: "this fall",
     refundLine: "Refundable until launch night.",
-    minimumAge: "18",
+    minimumAge: "16",
     launchLabel: "Founding price $19 CAD. Launching this fall.",
     durationEstimate: "About 2 to 3 hours",
     stopCountDisplay: "40+ real locations",
@@ -133,7 +133,7 @@ export const tours: Tour[] = [
       {
         question: "Is this a PDF guide?",
         answer:
-          "No. Saskatoon is the premium narrated audio driving tour. The Regina, Lethbridge, and Ohio products are the instant-download GPS guides.",
+          "No. The Dark Side of Saskatoon is a narrated audio driving tour, built around the road, the map, and what you hear at each stop.",
       },
       {
         question: "Do I have to leave the car?",
@@ -163,7 +163,7 @@ export const tours: Tour[] = [
       {
         question: "Is it suitable for children?",
         answer:
-          "No. The tour is built for adults and includes disturbing history, crime, hauntings, and mature themes.",
+          "The tour is built for ages 16+ and includes disturbing history, crime, hauntings, and mature themes. Use your judgment for younger passengers.",
       },
       {
         question: "Is the tour based on real events?",

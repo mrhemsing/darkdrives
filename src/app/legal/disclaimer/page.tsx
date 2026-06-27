@@ -3,11 +3,11 @@ import { PageHero } from "@/components/page-hero";
 const sections = [
   [
     "For entertainment and information only.",
-    "The Dark Side of Saskatoon and every Dark Drives tour are works of entertainment. The stories, legends, and accounts in our tours are drawn from publicly reported events, local news, urban legend, folklore, and reports submitted by the public. Some are dramatized. We make no claim that any paranormal event described is literally true, and references to real events, places, or history are presented for storytelling and entertainment, not as statements of fact.",
+    "The Dark Side of Saskatoon is a work of entertainment. The stories, legends, and accounts in the tour are drawn from publicly reported events, local news, urban legend, folklore, and reports submitted by the public. Some are dramatized. We make no claim that any paranormal event described is literally true, and references to real events, places, or history are presented for storytelling and entertainment, not as statements of fact.",
   ],
   [
     "Real places, real respect.",
-    "Our tours reference real, public locations. Many are near homes, businesses, schools, and places where real people live and work, and in some cases where real tragedies occurred. Treat every location with respect. Do not trespass. Do not enter private property. Do not disturb residents, businesses, memorials, graves, or the peace of any neighbourhood. Obey all signs, gates, and posted hours. Be considerate of victims and their families.",
+    "The tour references real, public locations. Many are near homes, businesses, schools, and places where real people live and work, and in some cases where real tragedies occurred. Treat every location with respect. Do not trespass. Do not enter private property. Do not disturb residents, businesses, memorials, graves, or the peace of any neighbourhood. Obey all signs, gates, and posted hours. Be considerate of victims and their families.",
   ],
   [
     "Drive safely.",
@@ -18,8 +18,8 @@ const sections = [
     "Participation is entirely voluntary and at your own risk. You are responsible for your own safety, your vehicle, your passengers, and your conduct, and for obeying all laws. To the fullest extent permitted by law, Off Grid Sask and Dark Drives are not liable for any injury, loss, damage, fine, or harm arising from your use of a tour or your visit to any location.",
   ],
   [
-    "Extra caution for GPS guides.",
-    "Some GPS guide products may reference abandoned buildings, tunnels, ruins, remote roads, waterways, or other hazardous places. Do not enter abandoned structures, cross barriers, ignore posted signs, or access private land without explicit permission from the landowner. A location being listed in a guide is not permission to enter it.",
+    "Stay outside restricted places.",
+    "Do not enter abandoned structures, cross barriers, ignore posted signs, or access private land without explicit permission from the landowner. A location being referenced in the tour is not permission to enter it.",
   ],
 ];
 

@@ -1,14 +1,11 @@
 import Link from "next/link";
 import { ArrowRight, MapPin, Radio, Video } from "lucide-react";
-import { CityVoteForm } from "@/components/city-vote-form";
-import { FreeFileForm } from "@/components/free-file-form";
 import { HeroSignal } from "@/components/hero-signal";
 import { HowItWorksCard } from "@/components/how-it-works-card";
-import { ProductCard } from "@/components/product-card";
 import { RedactedCard } from "@/components/redacted-card";
 import { StickyBuyBar } from "@/components/sticky-buy-bar";
 import { TeaserMap } from "@/components/teaser-map";
-import { bundleProducts, guideProducts, tours } from "@/data/tours";
+import { tours } from "@/data/tours";
 import { pageMetadata, seo } from "@/lib/seo";
 
 const tour = tours[0];
@@ -38,16 +35,17 @@ export default function Home() {
           <p className="mt-6 max-w-xl text-base leading-7 text-bone-dim sm:text-lg">
             You have driven past all of it. You just never looked. The Dark
             Side of Saskatoon is a self-guided audio tour you run after dark.
-            Real places. Real records. One city you thought you knew.
+            Real places. Real records. A GPS route on your phone. One city you
+            thought you knew.
           </p>
           <HeroSignal audioSrc={tour.trailerAudio} />
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <Link
-              href="/catalog"
+              href="/saskatoon#buy"
               className="inline-flex h-12 items-center justify-center gap-2 rounded-sm bg-blood px-5 font-mono text-sm uppercase text-bone transition hover:bg-blood-hot"
             >
               <ArrowRight size={18} aria-hidden />
-              Shop the catalog
+              Unlock the tour
             </Link>
             <Link
               href="/saskatoon#preview"
@@ -58,13 +56,14 @@ export default function Home() {
             </Link>
           </div>
           <div className="mt-6 grid gap-2 border-y border-ash-line/80 py-4 font-mono text-[0.68rem] uppercase leading-5 tracking-[0.04em] text-ash sm:flex sm:flex-wrap sm:gap-x-4">
-            <span>4 guides live</span>
-            <span>230+ real locations</span>
-            <span>Instant access</span>
+            <span>Saskatoon audio tour</span>
+            <span>{tour.stopCountDisplay}</span>
+            <span>GPS route on your phone</span>
+            <span>Founding price {tour.priceDisplay}</span>
             <span>Drive tonight</span>
           </div>
           <p className="mt-4 max-w-xl text-sm leading-6 text-bone-dim">
-            Every road on every tour was driven by us, at the hours the stories happen.
+            Every road on this tour was driven by us, at the hours the stories happen.
           </p>
         </div>
       </section>
@@ -98,7 +97,8 @@ export default function Home() {
             </h2>
             <p className="mt-5 max-w-xl leading-7 text-bone-dim">
               Every dot is a decoy. We scrambled the signal so you cannot
-              cheat. Unlock the tour and we hand you the real map.
+              cheat. Unlock the tour and we hand you the real GPS map for your
+              phone.
             </p>
             <p className="mt-5 flex gap-2 font-mono text-xs uppercase leading-6 tracking-[0.04em] text-ash">
               <span className="shrink-0 text-sick">&gt;</span>
@@ -123,6 +123,79 @@ export default function Home() {
             </div>
           </div>
           <TeaserMap pins={tour.decoyPins ?? []} />
+        </div>
+      </section>
+
+      <section className="border-y border-ash-line bg-background px-5 py-16 sm:px-8">
+        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1fr_0.95fr] lg:items-center">
+          <div>
+            <p className="font-mono text-xs uppercase tracking-[0.28em] text-sick">
+              Self-guided driving tour map
+            </p>
+            <h2 className="mt-4 font-display text-5xl uppercase leading-none text-bone sm:text-6xl">
+              Explore all 40+ locations using GPS on your phone.
+            </h2>
+            <p className="mt-5 max-w-2xl text-lg leading-8 text-bone-dim">
+              Includes backstories, urban legends, narrated audio, and the
+              route built for one dark drive through Saskatoon.
+            </p>
+          </div>
+          <div className="border border-ash-line bg-paper p-5">
+            <p className="font-mono text-xs uppercase tracking-[0.18em] text-blood-hot">
+              Disclaimer
+            </p>
+            <p className="mt-3 text-lg leading-8 text-bone">
+              Ages {tour.minimumAge}+. Keep your doors locked. Passenger runs
+              the phone. Drive safe, stay sober, and do not enter private,
+              restricted, or unsafe places.
+            </p>
+            <p className="mt-5 font-display text-3xl uppercase text-blood-hot">
+              Instant access {tour.priceDisplay}
+            </p>
+            <p className="mt-2 font-mono text-[0.68rem] uppercase leading-5 tracking-[0.04em] text-ash">
+              Entertainment only // Respect property // Obey signs // Drive sober
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y border-ash-line bg-paper/70 px-5 py-20 sm:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div>
+            <p className="font-mono text-xs uppercase tracking-[0.28em] text-sick">
+              Saskatoon files
+            </p>
+            <h2 className="mt-4 max-w-4xl font-display text-5xl uppercase leading-[1.14] sm:leading-[1.1]">
+              Featuring local names Saskatoon drivers already know.
+            </h2>
+          </div>
+          <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              "The Black Alley",
+              "The College Park Soap Girl",
+              "The Confed Crawler",
+              "Devil's Tail Crossing",
+              "The Evergreen Field Thing",
+              "The Haunted Road",
+              "The Hodgson Rd Knocker",
+              "The James Anderson Park Peeper",
+            ].map((name) => (
+              <div
+                key={name}
+                className="relative overflow-hidden rounded-sm border border-ash-line bg-background/75 px-4 py-5"
+              >
+                <div className="absolute right-3 top-3 h-3 w-3 border-r border-t border-bone/30" />
+                <div className="absolute bottom-3 left-3 h-3 w-3 border-b border-l border-bone/30" />
+                <p className="font-display text-2xl uppercase leading-[1.14] text-bone sm:text-3xl sm:leading-[1.1]">
+                  {name}
+                </p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-6 max-w-3xl font-mono text-xs uppercase leading-6 tracking-[0.04em] text-ash">
+            Exact route, coordinates, stop order, and full stories unlock after
+            purchase.
+          </p>
         </div>
       </section>
 
@@ -163,40 +236,6 @@ export default function Home() {
       <section className="px-5 py-20 sm:px-8">
         <div className="mx-auto mb-20 max-w-7xl">
           <p className="font-mono text-xs uppercase tracking-[0.28em] text-sick">
-            Instant guides
-          </p>
-          <div className="mt-6 flex flex-col justify-between gap-5 md:flex-row md:items-end">
-            <div>
-              <h2 className="font-display text-5xl uppercase leading-none">
-                Download the dark.
-              </h2>
-              <p className="mt-5 max-w-2xl text-bone-dim">
-                Regina, Lethbridge, and Ohio are GPS guides: buy, download,
-                drive. Saskatoon stays the premium narrated audio tour.
-              </p>
-            </div>
-            <Link
-              href="/catalog"
-              className="inline-flex h-11 items-center justify-center gap-2 rounded-sm border border-blood px-4 font-mono text-xs uppercase text-bone transition hover:bg-blood"
-            >
-              <ArrowRight size={16} aria-hidden />
-              View all products
-            </Link>
-          </div>
-          <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {guideProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-          <div className="mt-4 grid gap-4">
-            {bundleProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-        </div>
-
-        <div className="mx-auto mb-20 max-w-7xl">
-          <p className="font-mono text-xs uppercase tracking-[0.28em] text-sick">
             Reports from the road
           </p>
           <div className="mt-6 grid gap-4 md:grid-cols-3">
@@ -225,16 +264,17 @@ export default function Home() {
             ))}
           </div>
         </div>
-        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1fr_0.8fr]">
+        <div className="mx-auto max-w-7xl">
           <div>
             <p className="font-mono text-xs uppercase tracking-[0.28em] text-sick">
-              More cities
+              Start the tour
             </p>
             <h2 className="mt-4 font-display text-5xl uppercase leading-none">
-              Medicine Hat is still buried.
+              Saskatoon is waiting.
             </h2>
             <p className="mt-5 max-w-2xl text-bone-dim">
-              The first catalog is live. Tell us which city we dig up next.
+              One city. Forty real places. A self-guided audio tour built for a
+              dark road and a full car.
             </p>
             <p className="mt-6 font-mono text-xl uppercase text-blood-hot">
               Film your drive. If you make it through, tag it. #DarkDrives
@@ -242,21 +282,33 @@ export default function Home() {
             <div className="mt-8 flex flex-wrap gap-3">
               <span className="inline-flex items-center gap-2 border border-ash-line px-3 py-2 font-mono text-xs text-bone-dim">
                 <MapPin size={14} aria-hidden />
-                Four files active
+                {tour.stopCountDisplay}
               </span>
               <span className="inline-flex items-center gap-2 border border-ash-line px-3 py-2 font-mono text-xs text-bone-dim">
                 <Radio size={14} aria-hidden />
-                Vote to summon
+                Audio preview live
               </span>
               <span className="inline-flex items-center gap-2 border border-ash-line px-3 py-2 font-mono text-xs text-bone-dim">
                 <Video size={14} aria-hidden />
                 Footage wanted
               </span>
             </div>
-          </div>
-          <div className="grid gap-4">
-            <FreeFileForm />
-            <CityVoteForm defaultCity="medicine hat" />
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Link
+                href="/saskatoon#preview"
+                className="inline-flex h-11 items-center justify-center gap-2 rounded-sm border border-ash-line px-4 font-mono text-xs uppercase text-bone transition hover:border-sick hover:text-sick"
+              >
+                <Radio size={16} aria-hidden />
+                Hear the sample
+              </Link>
+              <Link
+                href="/saskatoon#buy"
+                className="inline-flex h-11 items-center justify-center gap-2 rounded-sm bg-blood px-4 font-mono text-xs uppercase text-bone transition hover:bg-blood-hot"
+              >
+                <ArrowRight size={16} aria-hidden />
+                Unlock the tour {tour.priceDisplay}
+              </Link>
+            </div>
           </div>
         </div>
       </section>

@@ -8,19 +8,15 @@ const tour = tours[0];
 
 const faqSections = [
   {
-    title: "The catalog",
+    title: "The tour",
     items: [
       [
         "What is The Dark Side of Saskatoon?",
         "A self-guided audio driving tour of real haunted, cursed, and unsolved places across Saskatoon. You drive the route in your own car, after dark, and at each stop you press play and hear what happened on that ground, and what people say has happened since.",
       ],
       [
-        "What are Regina, Lethbridge, and Ohio?",
-        "They are instant-download GPS guides. Regina and Lethbridge are city haunt guides. Ohio is a 150+ location creepy road-trip guide covering hauntings, abandoned places, cryptids, UFO skies, tunnels, and more.",
-      ],
-      [
         "Is this an app I have to download?",
-        "No subscription and no app store. Audio tours include full access instructions. GPS guides are instant downloads you can open after checkout.",
+        "No subscription and no app store. The Saskatoon audio tour includes access instructions, the route, and the narrated files you need for the drive.",
       ],
       [
         "How long does it take?",
@@ -41,11 +37,11 @@ const faqSections = [
     items: [
       [
         "Is it safe?",
-        "The products are built for lawful public access. You never have to trespass, and you never should. GPS guide pins are not permission to enter land, abandoned structures, tunnels, ruins, private property, staff-only areas, or restricted places. Drive sober, obey every traffic law and sign, and use your head.",
+        "The tour is built for lawful public roads and safe places to stop. You never have to trespass, and you never should. Drive sober, obey every traffic law and sign, and use your head.",
       ],
       [
         "Do I have to get out of the car?",
-        "For Saskatoon, almost never. For GPS guides, you choose how to approach each place. Stay on lawful public access, avoid restricted areas, and skip any location that looks unsafe or unclear.",
+        "Almost never. The Saskatoon tour is designed around the car, public roads, and safe stopping points.",
       ],
       [
         "Can I do it alone?",
@@ -67,20 +63,16 @@ const faqSections = [
     items: [
       [
         "When does it launch?",
-        `Saskatoon is on pre-order for ${tour.launchSeason}. Regina, Lethbridge, and Ohio are positioned as instant-download guides once their Stripe products are connected.`,
+        `The Dark Side of Saskatoon is on pre-order for ${tour.launchSeason}.`,
       ],
       [
         "What does pre-order mean?",
-        "For Saskatoon, you pay the founding price now and lock it in. You get access the night the audio tour goes live. Instant guides do not use the pre-order flow.",
+        "You pay the founding price now and lock it in. You get access the night the audio tour goes live.",
       ],
       ["Can I buy it as a gift?", "Yes. A Dark Drives tour makes a properly unsettling gift."],
       [
         "What is your refund policy?",
         `${tour.refundLine} Because this is a digital product, please read the policy before you buy.`,
-      ],
-      [
-        "Will there be an All Access pass?",
-        "Yes. The storefront is structured for an All Access bundle once prices and Stripe products are confirmed.",
       ],
     ],
   },
@@ -102,15 +94,11 @@ const faqSections = [
     ],
   },
   {
-    title: "Other cities",
+    title: "Submissions",
     items: [
       [
-        "Will there be other cities?",
-        "Yes. Saskatoon, Regina, Lethbridge, and Ohio are the launch catalog. Medicine Hat and future cities stay on the vote list until they are built.",
-      ],
-      [
-        "Can I suggest a location or a city?",
-        "Please do. If your street or your city has a story we should know, send it. We read everything.",
+        "Can I suggest a Saskatoon location?",
+        "Please do. If your street, building, or stretch of road has a story we should know, send it. We read everything.",
       ],
     ],
   },

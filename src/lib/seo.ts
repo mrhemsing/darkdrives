@@ -63,12 +63,12 @@ export const seo = {
       "A self-guided audio driving tour you run after dark. Real places. Real records. The Dark Side of Saskatoon is live.",
   },
   catalog: {
-    title: "Dark Drives Catalog | Audio Tours and GPS Guides",
+    title: "The Dark Side of Saskatoon | Dark Drives",
     description:
-      "Shop Dark Drives audio tours, GPS guides, and All Access: Saskatoon, Regina, Lethbridge, and the Ohio Creepy GPS Adventure Guide.",
-    ogTitle: "Choose your drive.",
+      "Start with The Dark Side of Saskatoon, a self-guided haunted audio driving tour through 40+ real locations.",
+    ogTitle: "The Dark Side of Saskatoon",
     ogDescription:
-      "One storefront for haunted audio driving tours, instant GPS guides, and creepy road-trip files.",
+      "One city. Forty real places. A self-guided audio tour you drive after dark.",
   },
   saskatoon: {
     title: "The Dark Side of Saskatoon | Haunted Audio Driving Tour",
@@ -79,12 +79,12 @@ export const seo = {
       "40+ real haunted and true-crime locations. A self-guided audio tour you drive in a single night. Pre-order the founding price now.",
   },
   cities: {
-    title: "Dark Drives | Future Cities and Votes",
+    title: "The Dark Side of Saskatoon | Dark Drives",
     description:
-      "Vote for future Dark Drives cities and get notified when the next haunted guide or audio driving tour launches.",
-    ogTitle: "The road does not end here.",
+      "The Dark Side of Saskatoon is the first Dark Drives audio tour.",
+    ogTitle: "The Dark Side of Saskatoon",
     ogDescription:
-      "Medicine Hat and the next wave are still buried. Vote for what Dark Drives should raise next.",
+      "The first Dark Drives release is focused on Saskatoon.",
   },
   howItWorks: {
     title: "How Dark Drives Works | Haunted Audio Driving Tours",

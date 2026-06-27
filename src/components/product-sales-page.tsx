@@ -52,8 +52,8 @@ export function ProductSalesPage({ product }: { product: Tour }) {
     ["Duration", product.durationEstimate],
     ["Stops", product.stopCountDisplay],
     ["Format", "Self-guided audio"],
+    ["Map", "GPS on your phone"],
     ["Difficulty", "Easy drive"],
-    ["Start", "Saskatoon city route"],
     ["When", "Available anytime"],
   ];
   const reviews = [
@@ -95,7 +95,7 @@ export function ProductSalesPage({ product }: { product: Tour }) {
               <p className="mt-6 max-w-2xl text-lg leading-8 text-bone-dim sm:text-xl">
                 Explore real locations through an immersive self-guided audio
                 experience featuring haunted history, local legends, and chilling
-                stories.
+                stories, with the route mapped on your phone.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <TourCta
@@ -221,6 +221,19 @@ export function ProductSalesPage({ product }: { product: Tour }) {
                 {product.priceDisplay}
               </p>
               <p className="mt-4 text-bone-dim">{product.proofCopy}</p>
+              <div className="mt-5 border border-ash-line bg-background/70 p-4">
+                <p className="font-display text-3xl uppercase text-bone">
+                  Self-guided driving tour map
+                </p>
+                <p className="mt-3 text-sm leading-6 text-bone-dim">
+                  Explore all 40+ locations using GPS on your phone, with
+                  backstories, urban legends, and narrated audio at each stop.
+                </p>
+                <p className="mt-4 font-mono text-xs uppercase leading-5 tracking-[0.04em] text-ash">
+                  Ages {product.minimumAge}+. Keep your doors locked. Passenger
+                  handles the phone. Drive safe and sober.
+                </p>
+              </div>
               <div id="buy" className="mt-6">
                 <TourCta tour={product} />
               </div>
@@ -415,6 +428,9 @@ export function ProductSalesPage({ product }: { product: Tour }) {
               <ShieldAlert className="mt-1 text-blood-hot" size={22} aria-hidden />
               <div>
                 <h3 className="font-display text-3xl uppercase">The rules</h3>
+                <p className="mt-2 font-mono text-xs uppercase leading-5 tracking-[0.04em] text-blood-hot">
+                  Ages {product.minimumAge}+ // Entertainment only // Respect property
+                </p>
                 <p className="mt-3 text-sm leading-6 text-bone-dim">
                   {product.riskLine ??
                     "Do not trespass. Do not enter private property. Do not block traffic. The driver does not touch the phone."}

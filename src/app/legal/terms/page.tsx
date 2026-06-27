@@ -10,15 +10,15 @@ const terms = [
   ],
   [
     "2. What you are buying",
-    "Dark Drives sells digital products, including narrated audio driving tours and GPS guide downloads. Your purchase gives you a personal, non-transferable, non-commercial licence to access and use the product for your own enjoyment. One purchase covers personal use within a single vehicle or household. You may not copy, record, redistribute, resell, publicly perform, scrape, publish, or share the audio, route, GPS pins, guide files, or content.",
+    "Dark Drives sells a narrated Saskatoon audio driving tour. Your purchase gives you a personal, non-transferable, non-commercial licence to access and use the product for your own enjoyment. One purchase covers personal use within a single vehicle or household. You may not copy, record, redistribute, resell, publicly perform, scrape, publish, or share the audio, route, map, or content.",
   ],
   [
     "3. Pre-orders and pricing",
-    "A pre-order charges the founding price at the time of purchase and grants access when the product launches. Instant-download products are delivered after checkout once payment is complete. Prices, including founding prices and bundle prices, may change for future buyers. The price you paid is the price you paid.",
+    "A pre-order charges the founding price at the time of purchase and grants access when the product launches. Prices, including founding prices, may change for future buyers. The price you paid is the price you paid.",
   ],
   [
     "4. Refunds",
-    `${tour.refundLine} Instant-download guide sales are final once accessed or delivered unless required otherwise by law. If something breaks technically, contact us and we will make it right.`,
+    `${tour.refundLine} If something breaks technically, contact us and we will make it right.`,
   ],
   [
     "5. Eligibility and conduct",
@@ -34,7 +34,7 @@ const terms = [
   ],
   [
     "8. Assumption of risk and release",
-    "You take part voluntarily and at your own risk, and you release Off Grid Sask and Dark Drives from claims arising from your participation, to the fullest extent permitted by law. GPS guide listings, map pins, route notes, or story references are not permission to enter private property, closed public property, abandoned structures, tunnels, ruins, waterways, restricted areas, or hazardous places. See the Disclaimer.",
+    "You take part voluntarily and at your own risk, and you release Off Grid Sask and Dark Drives from claims arising from your participation, to the fullest extent permitted by law. Map points, route notes, or story references are not permission to enter private property, closed public property, abandoned structures, tunnels, ruins, waterways, restricted areas, or hazardous places. See the Disclaimer.",
   ],
   [
     "9. Limitation of liability",

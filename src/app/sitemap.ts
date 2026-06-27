@@ -3,13 +3,7 @@ import { siteUrl } from "@/lib/seo";
 
 const routes = [
   "",
-  "/catalog",
-  "/all-access",
   "/saskatoon",
-  "/regina",
-  "/lethbridge",
-  "/ohio",
-  "/cities",
   "/how-it-works",
   "/about",
   "/faq",
