@@ -1,8 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, MapPin, Radio, Video } from "lucide-react";
 import { HeroSignal } from "@/components/hero-signal";
 import { HowItWorksCard } from "@/components/how-it-works-card";
-import { RedactedCard } from "@/components/redacted-card";
 import { StickyBuyBar } from "@/components/sticky-buy-bar";
 import { TeaserMap } from "@/components/teaser-map";
 import { tours } from "@/data/tours";
@@ -17,10 +17,9 @@ export default function Home() {
     <main>
       <section className="scanlines relative min-h-[92vh] overflow-hidden border-b border-ash-line">
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-45"
+          className="absolute inset-0 bg-cover bg-center opacity-95"
           style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=78')",
+            backgroundImage: "url('/images/dark-drives-haunted-road.png')",
           }}
         />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,9,8,0.96),rgba(10,9,8,0.74)_48%,rgba(10,9,8,0.92)),radial-gradient(circle_at_60%_20%,rgba(146,184,107,0.14),transparent_22rem)]" />
@@ -159,17 +158,58 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="border-y border-ash-line bg-paper/70 px-5 py-14 sm:px-8">
+        <div className="mx-auto max-w-7xl">
+          <p className="font-mono text-xs uppercase tracking-[0.28em] text-sick">
+            This is the drive
+          </p>
+          <div className="mt-6 grid gap-4 lg:grid-cols-2">
+            {[
+              {
+                src: "/images/dark-drives-face-in-bushes.png",
+                alt: "A pale face hidden in bushes outside a car at night.",
+                title: "You stay in the car.",
+                copy: "The stories happen outside the window.",
+              },
+              {
+                src: "/images/dark-drives-window-face.png",
+                alt: "A dark abandoned building with a pale face in an upstairs window.",
+                title: "You press play.",
+                copy: "Then the stop tells you what happened there.",
+              },
+            ].map((image) => (
+              <figure
+                key={image.src}
+                className="overflow-hidden rounded-sm border border-ash-line bg-background"
+              >
+                <div className="relative aspect-[16/10] overflow-hidden">
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    sizes="(min-width: 1024px) 50vw, 100vw"
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+                  <figcaption className="absolute inset-x-0 bottom-0 p-4">
+                    <p className="font-display text-3xl uppercase leading-none text-bone">
+                      {image.title}
+                    </p>
+                    <p className="mt-2 text-sm leading-6 text-bone-dim">
+                      {image.copy}
+                    </p>
+                  </figcaption>
+                </div>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="border-y border-ash-line bg-paper/70 px-5 py-20 sm:px-8">
         <div className="mx-auto max-w-7xl">
-          <div>
-            <p className="font-mono text-xs uppercase tracking-[0.28em] text-sick">
-              Saskatoon files
-            </p>
-            <h2 className="mt-4 max-w-4xl font-display text-5xl uppercase leading-[1.15] sm:leading-[1.1]">
-              Featuring local names Saskatoon drivers already know.
-            </h2>
-          </div>
-          <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
             {[
               "The Black Alley",
               "The College Park Soap Girl",
@@ -179,57 +219,34 @@ export default function Home() {
               "The Haunted Road",
               "The Hodgson Rd Knocker",
               "The James Anderson Park Peeper",
+              "The Diefenbaker Bunker",
+              "The Old San Road",
+              "The Train Bridge Shadow",
+              "The Riverbank Watcher",
+              "The Broadway Hotel Room",
+              "The Nutana Footsteps",
+              "The Sutherland Tracks",
+              "The Cemetery Light",
             ].map((name) => (
               <div
                 key={name}
-                className="relative overflow-hidden rounded-sm border border-ash-line bg-background/75 px-4 py-5"
+                className="relative overflow-hidden rounded-sm border border-ash-line bg-background/75 px-3 py-3"
               >
                 <div className="absolute right-3 top-3 h-3 w-3 border-r border-t border-bone/30" />
                 <div className="absolute bottom-3 left-3 h-3 w-3 border-b border-l border-bone/30" />
-                <p className="font-display text-2xl uppercase leading-[1.14] text-bone sm:text-3xl sm:leading-[1.1]">
+                <p className="font-display text-xl uppercase leading-[1.1] text-bone sm:text-2xl sm:leading-[1.08]">
                   {name}
                 </p>
               </div>
             ))}
           </div>
-          <p className="mt-6 max-w-3xl font-mono text-xs uppercase leading-6 tracking-[0.04em] text-ash">
+          <p className="mt-5 font-display text-3xl uppercase leading-none text-blood-hot">
+            And many more.
+          </p>
+          <p className="mt-4 max-w-3xl font-mono text-xs uppercase leading-6 tracking-[0.04em] text-ash">
             Exact route, coordinates, stop order, and full stories unlock after
             purchase.
           </p>
-        </div>
-      </section>
-
-      <section className="border-y border-ash-line bg-paper/70 px-5 py-20 sm:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div>
-            <p className="font-mono text-xs uppercase tracking-[0.28em] text-sick">
-              Redacted reports
-            </p>
-            <h2 className="mt-4 font-display text-5xl uppercase leading-[1.15]">
-              Unlock the complete case files.
-            </h2>
-            <p className="mt-4 max-w-2xl text-bone-dim">
-              Get the full investigation: audio, maps, redacted reports, and
-              all 40+ stops.
-            </p>
-          </div>
-          <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {tour.teasers.map((teaser) => (
-              <RedactedCard key={teaser.id} teaser={teaser} />
-            ))}
-          </div>
-          <div className="mt-10 border border-ash-line bg-background/70 p-5">
-            <p className="font-mono text-sm uppercase text-bone-dim">
-              The rest stay sealed until you unlock the tour.
-            </p>
-            <Link
-              href="/saskatoon#buy"
-              className="mt-4 inline-flex h-11 items-center justify-center gap-2 rounded-sm bg-blood px-4 font-mono text-xs uppercase text-bone transition hover:bg-blood-hot"
-            >
-              <ArrowRight size={16} aria-hidden />
-              Unlock the tour {tour.priceDisplay}
-            </Link>
-          </div>
         </div>
       </section>
 
