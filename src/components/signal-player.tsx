@@ -16,7 +16,7 @@ const idleBars = Array.from({ length: 28 }, (_, index) => 18 + ((index * 19) % 5
 export default function SignalPlayer({
   audioSrc,
   label = "The signal",
-  description = "This is what the narrator's voice sounds like.",
+  description = "Hear the narrator's voice.",
   disabledDescription = "The narrated sample is being mastered.",
   className = "",
 }: SignalPlayerProps) {

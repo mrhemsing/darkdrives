@@ -27,7 +27,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,9,8,0.44),rgba(10,9,8,0.28)_42%,rgba(10,9,8,0.76)),radial-gradient(circle_at_50%_18%,rgba(208,0,0,0.18),transparent_20rem)] sm:bg-[linear-gradient(90deg,rgba(10,9,8,0.96),rgba(10,9,8,0.74)_48%,rgba(10,9,8,0.92)),radial-gradient(circle_at_60%_20%,rgba(208,0,0,0.14),transparent_22rem)]" />
         <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-background to-transparent" />
         <div className="relative mx-auto flex min-h-[92vh] max-w-7xl flex-col justify-center px-5 py-28 sm:min-h-[760px] sm:px-8 sm:pb-20 sm:pt-28 lg:min-h-[820px] lg:pt-32">
-          <h1 className="max-w-3xl font-display text-5xl uppercase leading-[1.08] text-bone sm:text-7xl sm:leading-[1.04] lg:text-8xl">
+          <h1 className="mt-8 max-w-3xl font-display text-5xl uppercase leading-[1.08] text-bone sm:mt-0 sm:text-7xl sm:leading-[1.04] lg:text-8xl">
             Every road has a dark story...
           </h1>
           <p className="mt-6 max-w-xl text-base leading-7 text-bone-dim sm:text-lg">
