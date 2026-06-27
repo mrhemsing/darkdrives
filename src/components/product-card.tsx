@@ -4,7 +4,7 @@ import type { Tour } from "@/data/tours";
 
 export function ProductCard({ product }: { product: Tour }) {
   return (
-    <article className="relative flex min-h-72 overflow-hidden rounded-sm border border-ash-line bg-[radial-gradient(110%_70%_at_82%_8%,rgba(146,184,107,0.05),transparent_60%),linear-gradient(to_top,rgba(150,160,150,0.05),transparent_38%),var(--background)] p-5">
+    <article className="relative flex min-h-72 overflow-hidden rounded-sm border border-ash-line bg-[radial-gradient(110%_70%_at_82%_8%,rgba(208,0,0,0.05),transparent_60%),linear-gradient(to_top,rgba(150,160,150,0.05),transparent_38%),var(--background)] p-5">
       <span className="absolute left-3 top-3 z-10 h-4 w-4 border-l border-t border-bone/45" />
       <span className="absolute bottom-3 right-3 z-10 h-4 w-4 border-b border-r border-bone/45" />
       <svg

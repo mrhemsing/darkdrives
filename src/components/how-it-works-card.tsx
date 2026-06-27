@@ -73,7 +73,7 @@ export function HowItWorksCard({
   motif: StepMotif;
 }) {
   return (
-    <article className="relative flex min-h-48 overflow-hidden rounded-sm border border-ash-line bg-[radial-gradient(120%_70%_at_80%_10%,rgba(146,184,107,0.05),transparent_60%),linear-gradient(to_top,rgba(150,160,150,0.05),transparent_38%),var(--paper)] px-6 py-7">
+    <article className="relative flex min-h-48 overflow-hidden rounded-sm border border-ash-line bg-[radial-gradient(120%_70%_at_80%_10%,rgba(208,0,0,0.05),transparent_60%),linear-gradient(to_top,rgba(150,160,150,0.05),transparent_38%),var(--paper)] px-6 py-7">
       <span className="absolute left-3 top-3 z-10 h-4 w-4 border-l border-t border-bone/50" />
       <span className="absolute bottom-3 right-3 z-10 h-4 w-4 border-b border-r border-bone/50" />
       <Motif type={motif} />

@@ -45,7 +45,7 @@ export function TourCta({
     setError(data.error ?? "Checkout is not configured yet.");
   }
 
-  const purchaseLabel = label ?? "Unlock the tour";
+  const purchaseLabel = label ?? "Unlock the self-guided tour";
   const buttonClassName = `inline-flex items-center justify-center gap-2 rounded-sm bg-blood font-mono uppercase text-bone transition hover:bg-blood-hot disabled:cursor-wait disabled:bg-blood-dim ${
     compact ? "h-11 px-4 text-xs" : "h-12 px-5 text-sm"
   }`;
@@ -61,7 +61,7 @@ export function TourCta({
             className="mt-1 h-4 w-4 accent-blood"
           />
           <span>
-            Send me Dark Drives launch notes, pre-launch files, and related tour
+            Send me Dark Drives launch notes, pre-launch files, and related self-guided tour
             updates. I can unsubscribe anytime.
           </span>
         </label>

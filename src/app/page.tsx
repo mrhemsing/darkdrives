@@ -15,26 +15,25 @@ export const metadata = pageMetadata({ ...seo.home, path: "/" });
 export default function Home() {
   return (
     <main>
-      <section className="scanlines relative min-h-[92vh] overflow-hidden border-b border-ash-line">
-        <div
-          className="absolute inset-0 bg-cover opacity-100 [background-position:center_top] sm:bg-center sm:opacity-95"
-          style={{
-            backgroundImage: "url('/images/dark-drives-haunted-road.png')",
-          }}
+      <section className="scanlines relative min-h-[92vh] overflow-hidden border-b border-ash-line sm:min-h-[760px] lg:min-h-[820px]">
+        <Image
+          src="/images/dark-drives-haunted-road.png"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="absolute inset-0 h-full w-full object-cover object-[50%_32%] opacity-100 sm:object-[50%_58%] sm:opacity-95"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,9,8,0.68),rgba(10,9,8,0.42)_42%,rgba(10,9,8,0.84)),radial-gradient(circle_at_50%_18%,rgba(146,184,107,0.18),transparent_20rem)] sm:bg-[linear-gradient(90deg,rgba(10,9,8,0.96),rgba(10,9,8,0.74)_48%,rgba(10,9,8,0.92)),radial-gradient(circle_at_60%_20%,rgba(146,184,107,0.14),transparent_22rem)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,9,8,0.44),rgba(10,9,8,0.28)_42%,rgba(10,9,8,0.76)),radial-gradient(circle_at_50%_18%,rgba(208,0,0,0.18),transparent_20rem)] sm:bg-[linear-gradient(90deg,rgba(10,9,8,0.96),rgba(10,9,8,0.74)_48%,rgba(10,9,8,0.92)),radial-gradient(circle_at_60%_20%,rgba(208,0,0,0.14),transparent_22rem)]" />
         <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-background to-transparent" />
-        <div className="relative mx-auto flex min-h-[92vh] max-w-7xl flex-col justify-center px-5 py-28 sm:px-8">
-          <p className="font-mono text-xs uppercase tracking-[0.34em] text-sick">
-            Off Grid Sask presents
-          </p>
-          <h1 className="mt-5 max-w-3xl font-display text-5xl uppercase leading-[1.08] text-bone sm:text-7xl sm:leading-[1.04] lg:text-8xl">
-            Everything you are about to hear happened here.
+        <div className="relative mx-auto flex min-h-[92vh] max-w-7xl flex-col justify-center px-5 py-28 sm:min-h-[760px] sm:px-8 sm:py-20 lg:min-h-[820px]">
+          <h1 className="max-w-3xl font-display text-5xl uppercase leading-[1.08] text-bone sm:text-7xl sm:leading-[1.04] lg:text-8xl">
+            Every road has a dark story...
           </h1>
           <p className="mt-6 max-w-xl text-base leading-7 text-bone-dim sm:text-lg">
             Grab your friends, get in the car after dark, and press play. As
             you drive, a voice tells you the true, terrifying story behind every
-            haunted place you pass. 40+ of them, all over Saskatoon.
+            haunted place you pass. 40 of them, all over Saskatoon.
           </p>
           <HeroSignal audioSrc={tour.trailerAudio} />
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
@@ -43,7 +42,7 @@ export default function Home() {
               className="inline-flex h-12 items-center justify-center gap-2 rounded-sm bg-blood px-5 font-mono text-sm uppercase text-bone transition hover:bg-blood-hot"
             >
               <ArrowRight size={18} aria-hidden />
-              Get the tour {tour.priceDisplay}
+              Get the self-guided tour {tour.priceDisplay}
             </Link>
           </div>
           <div className="mt-6 grid gap-2 border-y border-ash-line/80 py-4 font-mono text-[0.68rem] uppercase leading-5 tracking-[0.04em] text-ash sm:flex sm:flex-wrap sm:gap-x-4">
@@ -58,7 +57,7 @@ export default function Home() {
       <section className="border-b border-ash-line bg-background px-5 py-12 sm:px-8">
         <div className="mx-auto grid max-w-7xl gap-4 md:grid-cols-3">
           {[
-            ["01", "Get the tour", "It lands on your phone instantly.", "key"],
+            ["01", "Get the self-guided tour", "It lands on your phone instantly.", "key"],
             ["02", "Grab your friends", "Wait for dark. Pile into one car.", "road"],
             ["03", "Press play and drive", "We tell you everything. You just hold on.", "waveform"],
           ].map(([number, title, copy, motif]) => (
@@ -76,23 +75,20 @@ export default function Home() {
       <section className="border-y border-ash-line bg-paper/70 px-5 py-14 sm:px-8">
         <div className="mx-auto max-w-7xl">
           <p className="font-mono text-xs uppercase tracking-[0.28em] text-sick">
-            This is the drive
+            The drive
           </p>
-          <h2 className="mt-4 font-display text-5xl uppercase leading-[1.15]">
-            Here&apos;s the whole idea.
-          </h2>
           <div className="mt-6 grid gap-4 lg:grid-cols-2">
             {[
               {
                 src: "/images/dark-drives-face-in-bushes.png",
                 alt: "A pale face hidden in bushes outside a car at night.",
-                title: "You stay in the car.",
+                title: "Stay in the car",
                 copy: "The scary stuff happens outside your window.",
               },
               {
                 src: "/images/dark-drives-window-face.png",
                 alt: "A dark abandoned building with a pale face in an upstairs window.",
-                title: "You press play.",
+                title: "Press play",
                 copy: "The voice tells you what really happened there.",
               },
             ].map((image) => (
@@ -111,7 +107,7 @@ export default function Home() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
                   <figcaption className="absolute inset-x-0 bottom-0 p-4">
-                    <p className="font-display text-3xl uppercase leading-none text-bone">
+                    <p className="font-logo text-3xl uppercase leading-none text-blood-hot">
                       {image.title}
                     </p>
                     <p className="mt-2 text-sm leading-6 text-bone-dim">
@@ -129,15 +125,20 @@ export default function Home() {
                   <p className="font-mono text-xs uppercase tracking-[0.28em] text-sick">
                     The map
                   </p>
-                  <h3 className="mt-4 font-display text-5xl uppercase leading-[1.15] sm:text-6xl sm:leading-[1.15]">
-                    It&apos;s all around you.
+                  <h3 className="mt-4 font-display text-4xl uppercase leading-[1.15] min-[380px]:text-5xl sm:text-6xl sm:leading-[1.15]">
+                    <span className="block whitespace-nowrap sm:inline sm:whitespace-normal">
+                      Explore the dark
+                    </span>{" "}
+                    <span className="block whitespace-nowrap sm:inline sm:whitespace-normal">
+                      side of Saskatoon
+                    </span>
                   </h3>
                   <p
                     className="mt-5 max-w-xl text-lg leading-8 text-bone-dim"
                     style={{ marginBottom: "2rem" }}
                   >
-                    40+ real haunted spots, scattered across the whole city. The
-                    full map and route come with the tour.
+                    40 real haunted spots, scattered across the whole city. The
+                    full map and route come with the self-guided tour.
                   </p>
                 </div>
                 <div className="grid grid-cols-3 gap-3">
@@ -160,11 +161,11 @@ export default function Home() {
                 href="/saskatoon#buy"
                 className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-sm bg-blood px-5 font-mono text-sm uppercase text-bone transition hover:bg-blood-hot"
               >
-                Get the tour {tour.priceDisplay}
+                Get the self-guided tour {tour.priceDisplay}
                 <ArrowRight size={18} aria-hidden />
               </Link>
             </div>
-            <TeaserMap pins={tour.decoyPins ?? []} />
+            <TeaserMap pins={tour.decoyPins ?? []} numbered />
           </div>
         </div>
       </section>
@@ -228,7 +229,7 @@ export default function Home() {
           </p>
           <p className="mt-4 max-w-3xl font-mono text-xs uppercase leading-6 tracking-[0.04em] text-ash">
             The route, stop order, and the full story behind every name come
-            with the tour.
+            with the self-guided tour.
           </p>
         </div>
       </section>
@@ -273,13 +274,13 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <div>
             <p className="font-mono text-xs uppercase tracking-[0.28em] text-sick">
-              Start the tour
+              Start the self-guided tour
             </p>
             <h2 className="mt-4 font-display text-5xl uppercase leading-[1.15]">
               Saskatoon is waiting.
             </h2>
             <p className="mt-5 max-w-2xl text-bone-dim">
-              One city. 40+ real haunted places. One night you will not forget.
+              One city. 40 real haunted places. One night you will not forget.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <span className="inline-flex items-center gap-2 border border-ash-line px-3 py-2 font-mono text-xs text-bone-dim">
@@ -301,7 +302,7 @@ export default function Home() {
                 className="inline-flex h-11 items-center justify-center gap-2 rounded-sm bg-blood px-4 font-mono text-xs uppercase text-bone transition hover:bg-blood-hot"
               >
                 <ArrowRight size={16} aria-hidden />
-                Get the tour {tour.priceDisplay}
+                Get the self-guided tour {tour.priceDisplay}
               </Link>
             </div>
             <p className="mt-4 font-mono text-xs uppercase leading-6 tracking-[0.04em] text-ash">

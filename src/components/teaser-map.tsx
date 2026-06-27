@@ -5,6 +5,7 @@ export function TeaserMap({
   pins: { lat: number; lng: number }[];
   numbered?: boolean;
 }) {
+  const routeLimit = 40;
   const sourcePins =
     pins.length > 0
       ? pins
@@ -13,15 +14,16 @@ export function TeaserMap({
           { lat: 0.5, lng: 0.7 },
           { lat: 0.8, lng: 0.4 },
         ];
-  const latitudes = sourcePins.map((pin) => pin.lat);
-  const longitudes = sourcePins.map((pin) => pin.lng);
+  const routePins = orderPinsEfficiently(sourcePins).slice(0, routeLimit);
+  const latitudes = routePins.map((pin) => pin.lat);
+  const longitudes = routePins.map((pin) => pin.lng);
   const minLat = Math.min(...latitudes);
   const maxLat = Math.max(...latitudes);
   const minLng = Math.min(...longitudes);
   const maxLng = Math.max(...longitudes);
   const latRange = maxLat - minLat || 1;
   const lngRange = maxLng - minLng || 1;
-  const visiblePins = sourcePins.slice(0, numbered ? 9 : 26).map((pin, index) => ({
+  const visiblePins = routePins.map((pin, index) => ({
     id: `${pin.lat}-${pin.lng}-${index}`,
     x: 10 + ((pin.lng - minLng) / lngRange) * 80,
     y: 10 + (1 - (pin.lat - minLat) / latRange) * 80,
@@ -58,12 +60,12 @@ export function TeaserMap({
           <path d="M-10 300 L160 280 L330 320 L410 300" />
           <path d="M340 -10 L360 160 L330 360" />
         </g>
-        <g fill="none" stroke="rgba(146,184,107,0.18)" strokeWidth="0.75">
+        <g fill="none" stroke="rgba(208,0,0,0.18)" strokeWidth="0.75">
           <path d="M32 36 L120 58 L144 118 L82 160 L28 120 Z" />
           <path d="M214 30 L326 56 L360 148 L284 206 L206 162 Z" />
           <path d="M128 214 L232 190 L298 284 L208 338 L96 292 Z" />
         </g>
-        <g fill="none" stroke="rgba(146,184,107,0.18)" strokeWidth="0.7">
+        <g fill="none" stroke="rgba(208,0,0,0.18)" strokeWidth="0.7">
           <circle cx="200" cy="174" r="48" />
           <circle cx="200" cy="174" r="96" />
           <circle cx="200" cy="174" r="144" />
@@ -79,10 +81,10 @@ export function TeaserMap({
                 )}
                 fill="none"
                 stroke="rgba(209,31,42,0.72)"
-                strokeDasharray="8 6"
+                strokeDasharray="6 5"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                strokeWidth="2"
+                strokeWidth="1.6"
               />
               {visiblePins[0] ? (
                 <rect
@@ -113,16 +115,16 @@ export function TeaserMap({
                   <circle
                     cx={pin.x * 4}
                     cy={pin.y * 3.48}
-                    r="7"
+                    r="5.2"
                     fill="#0a0908"
                     stroke="#e6e1d6"
-                    strokeWidth="1"
+                    strokeWidth="0.8"
                   />
                   <text
                     x={pin.x * 4}
-                    y={pin.y * 3.48 + 3}
+                    y={pin.y * 3.48 + 2}
                     fill="#e6e1d6"
-                    fontSize="8"
+                    fontSize={pin.label >= 10 ? "5.2" : "6.4"}
                     fontWeight="700"
                     textAnchor="middle"
                   >
@@ -151,10 +153,10 @@ export function TeaserMap({
       </svg>
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_100%_at_50%_40%,transparent_55%,rgba(0,0,0,0.6)_100%)]" />
       <div className="absolute bottom-4 right-4 hidden rounded-sm border border-ash-line bg-background/80 px-3 py-2 font-mono text-[0.65rem] uppercase text-ash sm:block">
-        {numbered ? "Preview route / exact stops hidden" : "40+ spots across Saskatoon"}
+        {numbered ? "40-stop teaser / exact addresses hidden" : "40 spots across Saskatoon"}
       </div>
       <div className="absolute left-3 top-3 rounded-sm border border-sick/45 bg-background/75 px-3 py-2 font-mono text-[0.68rem] uppercase tracking-[0.14em] text-sick">
-        {numbered ? "Route preview, no story details" : "Full route comes with the tour"}
+        {numbered ? "Optimized route preview" : "Full route comes with the self-guided tour"}
       </div>
       {numbered ? (
         <div className="absolute bottom-4 left-4 flex gap-2 font-mono text-[0.65rem] uppercase">
@@ -168,4 +170,39 @@ export function TeaserMap({
       ) : null}
     </div>
   );
+}
+
+function orderPinsEfficiently(pins: { lat: number; lng: number }[]) {
+  if (pins.length < 3) {
+    return pins;
+  }
+
+  const remaining = [...pins];
+  const startIndex = remaining.reduce((bestIndex, pin, index) => {
+    const best = remaining[bestIndex];
+    const bestScore = best.lat + best.lng;
+    const score = pin.lat + pin.lng;
+    return score < bestScore ? index : bestIndex;
+  }, 0);
+  const ordered = [remaining.splice(startIndex, 1)[0]];
+
+  while (remaining.length > 0) {
+    const current = ordered.at(-1)!;
+    const nextIndex = remaining.reduce((bestIndex, pin, index) => {
+      const best = remaining[bestIndex];
+      return distanceSquared(current, pin) < distanceSquared(current, best)
+        ? index
+        : bestIndex;
+    }, 0);
+    ordered.push(remaining.splice(nextIndex, 1)[0]);
+  }
+
+  return ordered;
+}
+
+function distanceSquared(
+  a: { lat: number; lng: number },
+  b: { lat: number; lng: number },
+) {
+  return (a.lat - b.lat) ** 2 + (a.lng - b.lng) ** 2;
 }

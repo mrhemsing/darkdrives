@@ -33,11 +33,11 @@ export function StickyBuyBar({ tour }: { tour: Tour }) {
             The Dark Side of Saskatoon · {tour.priceDisplay}
           </p>
           <p className="font-mono text-[0.66rem] uppercase tracking-[0.04em] text-ash">
-            Saskatoon audio tour
+            Saskatoon self-guided audio tour
           </p>
         </div>
         <div className="shrink-0">
-          <TourCta tour={tour} label="Get the tour" compact showConsent={false} />
+          <TourCta tour={tour} label="Self-guided tour" compact showConsent={false} />
         </div>
       </div>
     </div>

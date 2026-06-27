@@ -3,6 +3,14 @@
 @import "@fontsource-variable/jetbrains-mono";
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Breath of the House";
+  src: url("/fonts/breath-of-the-house.ttf") format("truetype");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+
 :root {
   --background: #0a0908;
   --foreground: #e6e1d6;
@@ -14,8 +22,8 @@
   --blood: #9f000b;
   --blood-hot: #b3000f;
   --blood-dim: #4b0507;
-  --sick: #92b86b;
-  --sick-dim: #31482d;
+  --sick: #72ff57;
+  --sick-dim: #153d1c;
   --paper: #181410;
   --black-warm: #0a0908;
 }
@@ -54,10 +62,14 @@ body {
   min-height: 100vh;
   margin: 0;
   background:
-    radial-gradient(circle at 50% 0%, rgba(146, 184, 107, 0.08), transparent 28rem),
+    radial-gradient(circle at 50% 0%, rgba(208, 0, 0, 0.08), transparent 28rem),
     linear-gradient(180deg, rgba(10, 9, 8, 0.94), var(--background));
   color: var(--foreground);
   font-family: "Inter Variable", system-ui, sans-serif;
+}
+
+.font-logo {
+  font-family: "Breath of the House", "Oswald Variable", Impact, sans-serif;
 }
 
 a {

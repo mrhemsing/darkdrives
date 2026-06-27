@@ -12,7 +12,7 @@ export function Header() {
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-5 sm:px-8">
         <Link
           href="/"
-          className="logo-flicker logo-flicker-header font-display text-[2.44rem] uppercase leading-none sm:text-[2.56rem]"
+          className="logo-flicker logo-flicker-header font-logo whitespace-nowrap text-[2.44rem] uppercase leading-none sm:text-[2.56rem]"
         >
           Dark Drives
         </Link>
@@ -23,12 +23,6 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <Link
-          href="/saskatoon#buy"
-          className="rounded-sm border border-blood px-4 py-3 font-mono text-sm uppercase text-bone transition hover:bg-blood sm:text-base"
-        >
-          Get the tour
-        </Link>
       </div>
     </header>
   );
