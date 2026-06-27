@@ -122,8 +122,8 @@ export default function Home() {
               </figure>
             ))}
           </div>
-          <div className="mt-10 grid gap-8 min-[840px]:grid-cols-2 min-[840px]:items-stretch">
-            <div className="flex flex-col gap-7">
+          <div className="mt-10 grid gap-4 min-[840px]:grid-cols-2 min-[840px]:items-start">
+            <div className="flex flex-col gap-6">
               <div className="space-y-10">
                 <div>
                   <p className="font-mono text-xs uppercase tracking-[0.28em] text-sick">
@@ -158,7 +158,7 @@ export default function Home() {
               </div>
               <Link
                 href="/saskatoon#buy"
-                className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-sm bg-blood px-5 font-mono text-sm uppercase text-bone transition hover:bg-blood-hot min-[840px]:mt-auto"
+                className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-sm bg-blood px-5 font-mono text-sm uppercase text-bone transition hover:bg-blood-hot"
               >
                 Get the tour {tour.priceDisplay}
                 <ArrowRight size={18} aria-hidden />
