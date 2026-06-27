@@ -124,10 +124,7 @@ a {
 
 .logo-flicker {
   color: var(--blood-hot);
-  text-shadow:
-    0 0 10px rgba(208, 0, 0, 0.46),
-    0 0 28px rgba(208, 0, 0, 0.26),
-    0 0 48px rgba(208, 0, 0, 0.12);
+  text-shadow: 0 0 10px #d0000075, 0 0 18px #d0000042, 0 0 40px #d000001f;
   will-change: opacity, filter, text-shadow, color;
 }
 
