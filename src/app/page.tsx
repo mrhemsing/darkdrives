@@ -17,12 +17,12 @@ export default function Home() {
     <main>
       <section className="scanlines relative min-h-[92vh] overflow-hidden border-b border-ash-line">
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-95"
+          className="absolute inset-0 bg-cover opacity-100 [background-position:center_top] sm:bg-center sm:opacity-95"
           style={{
             backgroundImage: "url('/images/dark-drives-haunted-road.png')",
           }}
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,9,8,0.96),rgba(10,9,8,0.74)_48%,rgba(10,9,8,0.92)),radial-gradient(circle_at_60%_20%,rgba(146,184,107,0.14),transparent_22rem)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,9,8,0.68),rgba(10,9,8,0.42)_42%,rgba(10,9,8,0.84)),radial-gradient(circle_at_50%_18%,rgba(146,184,107,0.18),transparent_20rem)] sm:bg-[linear-gradient(90deg,rgba(10,9,8,0.96),rgba(10,9,8,0.74)_48%,rgba(10,9,8,0.92)),radial-gradient(circle_at_60%_20%,rgba(146,184,107,0.14),transparent_22rem)]" />
         <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-background to-transparent" />
         <div className="relative mx-auto flex min-h-[92vh] max-w-7xl flex-col justify-center px-5 py-28 sm:px-8">
           <p className="font-mono text-xs uppercase tracking-[0.34em] text-sick">
