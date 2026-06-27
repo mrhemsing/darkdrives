@@ -18,7 +18,7 @@ export function Header() {
         >
           <LogoMark
             flickerClassName="logo-flicker-header"
-            className="text-[3.65rem] sm:text-[2.56rem]"
+            className="text-[3.9rem] sm:text-[2.56rem]"
           />
           <span className="header-city-label">Saskatoon</span>
         </Link>
