@@ -146,7 +146,7 @@ export function ProductSalesPage({ product }: { product: Tour }) {
               <p className="font-mono text-xs uppercase tracking-[0.28em] text-sick">
                 Tour preview
               </p>
-              <h2 className="mt-4 font-display text-5xl uppercase leading-none">
+              <h2 className="mt-4 font-display text-5xl uppercase leading-[1.15]">
                 See what you are buying.
               </h2>
               <p className="mt-5 text-bone-dim">
@@ -327,7 +327,7 @@ export function ProductSalesPage({ product }: { product: Tour }) {
                 <p className="font-mono text-xs uppercase tracking-[0.28em] text-sick">
                   How it works
                 </p>
-                <h2 className="mt-4 font-display text-5xl uppercase leading-none">
+                <h2 className="mt-4 font-display text-5xl uppercase leading-[1.15]">
                   Four steps. No friction.
                 </h2>
               </div>
@@ -371,7 +371,7 @@ export function ProductSalesPage({ product }: { product: Tour }) {
                 <p className="font-mono text-xs uppercase tracking-[0.28em] text-sick">
                   Proof
                 </p>
-                <h2 className="mt-4 font-display text-5xl uppercase leading-none">
+                <h2 className="mt-4 font-display text-5xl uppercase leading-[1.15]">
                   Built from documented history and local legends.
                 </h2>
               </div>
@@ -469,7 +469,7 @@ export function ProductSalesPage({ product }: { product: Tour }) {
             <p className="font-mono text-xs uppercase tracking-[0.28em] text-sick">
               {product.imprint}
             </p>
-            <h2 className="mt-4 font-display text-5xl uppercase leading-none">
+            <h2 className="mt-4 font-display text-5xl uppercase leading-[1.15]">
               {isAudioTour
                 ? "Are you ready?"
                 : product.status === "preorder"

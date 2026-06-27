@@ -37,6 +37,7 @@
   --font-sans: "Inter Variable", system-ui, sans-serif;
   --font-display: "Oswald Variable", Impact, sans-serif;
   --font-mono: "JetBrains Mono Variable", ui-monospace, monospace;
+  --text-5xl--line-height: 1.15;
 }
 
 * {

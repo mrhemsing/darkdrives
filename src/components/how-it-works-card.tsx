@@ -81,7 +81,7 @@ export function HowItWorksCard({
         <p className="flicker mb-3 font-mono text-sm font-medium uppercase tracking-[0.18em] text-blood-hot">
           {number}
         </p>
-        <h2 className="font-display text-5xl uppercase leading-none text-bone">
+        <h2 className="font-display text-5xl uppercase leading-[1.15] text-bone">
           {title}
         </h2>
         <p className="mt-3 max-w-[30ch] text-base leading-7 text-bone-dim">
