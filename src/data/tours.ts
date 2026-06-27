@@ -311,7 +311,7 @@ export const tours: Tour[] = [
       "Every one a real place you can stand tonight.",
     ],
     proofCopy:
-      "Buy the guide once and download it immediately. Pick a route, load the file, and let the Queen City get stranger after dark.",
+      "Unlock the guide once and download it immediately. Pick a route, load the file, and let the Queen City get stranger after dark.",
     riskLine:
       "Guide locations may be near private property, operating businesses, or unsafe areas. Do not enter restricted spaces or disturb anyone.",
     safetyBullets: [

@@ -6,7 +6,7 @@ export function RedactedCard({ teaser }: { teaser: TeaserCard }) {
     <article className="min-h-56 border border-ash-line bg-background/80 p-5">
       <div className="flex items-center gap-2 border-b border-ash-line pb-4 font-mono text-xs">
         <span className="text-blood-hot">{teaser.category}</span>
-        <span className="text-ash">{"//"}</span>
+        <span className="text-ash">{" // "}</span>
         <span className="text-ash">
           FILE <span className="redacted" />
         </span>

@@ -100,7 +100,7 @@ export function ProductSalesPage({ product }: { product: Tour }) {
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <TourCta
                   tour={product}
-                  label="Start your haunted tour"
+                  label="Unlock the tour"
                   compact
                   showConsent={false}
                 />
@@ -320,7 +320,7 @@ export function ProductSalesPage({ product }: { product: Tour }) {
               </div>
               <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
                 {[
-                  ["01", "Unlock", "Purchase the tour.", "key"],
+                  ["01", "Unlock", "Unlock the tour.", "key"],
                   ["02", "Drive", "Drive to the starting area.", "road"],
                   ["03", "Gear up", "Put on your headphones.", "waveform"],
                   ["04", "Listen", "Press play.", "waveform"],
@@ -389,7 +389,7 @@ export function ProductSalesPage({ product }: { product: Tour }) {
             <div className="mt-8">
               <TourCta
                 tour={product}
-                label="Begin exploring"
+                label="Unlock the tour"
                 compact
                 showConsent={false}
               />
@@ -468,7 +468,7 @@ export function ProductSalesPage({ product }: { product: Tour }) {
           </div>
           <TourCta
             tour={product}
-            label={isAudioTour ? "Start your haunted tour" : undefined}
+            label={isAudioTour ? "Unlock the tour" : undefined}
           />
         </div>
       </section>
@@ -477,7 +477,7 @@ export function ProductSalesPage({ product }: { product: Tour }) {
         <div className="fixed inset-x-0 bottom-0 z-40 border-t border-ash-line bg-background/94 p-3 backdrop-blur md:hidden">
           <TourCta
             tour={product}
-            label="Start your haunted walk"
+            label="Unlock the tour"
             compact
             showConsent={false}
           />

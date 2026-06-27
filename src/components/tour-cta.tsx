@@ -48,12 +48,12 @@ export function TourCta({
   const purchaseLabel =
     label ??
     tour.status === "preorder"
-      ? "Unlock the files"
+      ? "Unlock the tour"
       : tour.format === "audio-tour"
-        ? "Buy the tour"
+        ? "Unlock the tour"
         : tour.format === "bundle"
-          ? "Get all access"
-          : "Buy the guide";
+          ? "Unlock all access"
+          : "Unlock the guide";
   const buttonClassName = `inline-flex items-center justify-center gap-2 rounded-sm bg-blood font-mono uppercase text-bone transition hover:bg-blood-hot disabled:cursor-wait disabled:bg-blood-dim ${
     compact ? "h-11 px-4 text-xs" : "h-12 px-5 text-sm"
   }`;

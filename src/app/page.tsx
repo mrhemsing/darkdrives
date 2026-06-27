@@ -36,9 +36,9 @@ export default function Home() {
             Everything you are about to hear happened here.
           </h1>
           <p className="mt-6 max-w-xl text-base leading-7 text-bone-dim sm:text-lg">
-            You have driven past all of it. You just never knew. The Dark Side
-            of Saskatoon is a self-guided audio tour you run after dark. Real
-            places. Real records. One city you thought you knew.
+            You have driven past all of it. You just never looked. The Dark
+            Side of Saskatoon is a self-guided audio tour you run after dark.
+            Real places. Real records. One city you thought you knew.
           </p>
           <HeroSignal audioSrc={tour.trailerAudio} />
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
@@ -72,7 +72,7 @@ export default function Home() {
       <section className="border-b border-ash-line bg-background px-5 py-12 sm:px-8">
         <div className="mx-auto grid max-w-7xl gap-4 md:grid-cols-3">
           {[
-            ["01", "Unlock", "Buy the tour once. It is yours for good.", "key"],
+            ["01", "Unlock", "Unlock the tour once. It is yours for good.", "key"],
             ["02", "Drive", "Gather your bravest friends. Wait for dark. Follow the route.", "road"],
             ["03", "Listen", "Press play at every stop. Hear what the city buried.", "waveform"],
           ].map(([number, title, copy, motif]) => (
@@ -97,9 +97,8 @@ export default function Home() {
               It is all around you.
             </h2>
             <p className="mt-5 max-w-xl leading-7 text-bone-dim">
-              Every dot suggests the shape of the tour without marking a real
-              stop. We moved the signal so you cannot cheat. Pay the toll and
-              we hand you the real ones.
+              Every dot is a decoy. We scrambled the signal so you cannot
+              cheat. Unlock the tour and we hand you the real map.
             </p>
             <p className="mt-5 flex gap-2 font-mono text-xs uppercase leading-6 tracking-[0.04em] text-ash">
               <span className="shrink-0 text-sick">&gt;</span>
@@ -137,8 +136,8 @@ export default function Home() {
               Unlock the complete case files.
             </h2>
             <p className="mt-4 max-w-2xl text-bone-dim">
-              Get access to the full investigation: audio, maps, redacted
-              reports, and every stop sealed behind the public preview.
+              Get the full investigation: audio, maps, redacted reports, and
+              all 40+ stops.
             </p>
           </div>
           <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -148,15 +147,14 @@ export default function Home() {
           </div>
           <div className="mt-10 border border-ash-line bg-background/70 p-5">
             <p className="font-mono text-sm uppercase text-bone-dim">
-              {tour.stopCountDisplay.replace(" real locations", "")} more
-              files. All of them sealed until you take the drive.
+              The rest stay sealed until you unlock the tour.
             </p>
             <Link
               href="/saskatoon#buy"
               className="mt-4 inline-flex h-11 items-center justify-center gap-2 rounded-sm bg-blood px-4 font-mono text-xs uppercase text-bone transition hover:bg-blood-hot"
             >
               <ArrowRight size={16} aria-hidden />
-              Unlock the files {tour.priceDisplay}
+              Unlock the tour {tour.priceDisplay}
             </Link>
           </div>
         </div>
@@ -236,8 +234,7 @@ export default function Home() {
               Medicine Hat is still buried.
             </h2>
             <p className="mt-5 max-w-2xl text-bone-dim">
-              The first catalog is live. Tell us what should get mapped after
-              that.
+              The first catalog is live. Tell us which city we dig up next.
             </p>
             <p className="mt-6 font-mono text-xl uppercase text-blood-hot">
               Film your drive. If you make it through, tag it. #DarkDrives

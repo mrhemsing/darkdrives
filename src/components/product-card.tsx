@@ -35,7 +35,7 @@ export function ProductCard({ product }: { product: Tour }) {
       <p className="mt-4 text-sm leading-6 text-bone-dim">{product.tagline}</p>
       <div className="mt-5 grid gap-2 font-mono text-xs uppercase tracking-[0.04em] text-ash">
         <p>{product.locationCountDisplay}</p>
-        <p>{product.deliverable}</p>
+        {product.deliverable === "Bundle access" ? null : <p>{product.deliverable}</p>}
         <p>{product.priceDisplay}</p>
       </div>
       <div className="mt-auto pt-4">
