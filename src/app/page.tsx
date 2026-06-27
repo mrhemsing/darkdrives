@@ -209,7 +209,10 @@ export default function Home() {
 
       <section className="border-y border-ash-line bg-paper/70 px-5 py-20 sm:px-8">
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+          <p className="font-mono text-xs uppercase tracking-[0.28em] text-sick">
+            The case files
+          </p>
+          <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {[
               "The Black Alley",
               "The College Park Soap Girl",
@@ -227,25 +230,43 @@ export default function Home() {
               "The Nutana Footsteps",
               "The Sutherland Tracks",
               "The Cemetery Light",
-            ].map((name) => (
+            ].map((name, index) => (
               <div
                 key={name}
-                className="relative overflow-hidden rounded-sm border border-ash-line bg-background/75 px-3 py-3"
+                className="group relative min-h-28 overflow-hidden rounded-sm border border-ash-line bg-background px-4 py-4 transition hover:border-blood/50 hover:shadow-[0_0_0_1px_rgba(159,0,11,0.25),0_0_22px_rgba(159,0,11,0.12)]"
               >
-                <div className="absolute right-3 top-3 h-3 w-3 border-r border-t border-bone/30" />
-                <div className="absolute bottom-3 left-3 h-3 w-3 border-b border-l border-bone/30" />
-                <p className="font-display text-xl uppercase leading-[1.1] text-bone sm:text-2xl sm:leading-[1.08]">
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute inset-2 opacity-40 [background:linear-gradient(var(--bone),var(--bone))_left_top/13px_1px_no-repeat,linear-gradient(var(--bone),var(--bone))_left_top/1px_13px_no-repeat,linear-gradient(var(--bone),var(--bone))_right_top/13px_1px_no-repeat,linear-gradient(var(--bone),var(--bone))_right_top/1px_13px_no-repeat,linear-gradient(var(--bone),var(--bone))_left_bottom/13px_1px_no-repeat,linear-gradient(var(--bone),var(--bone))_left_bottom/1px_13px_no-repeat,linear-gradient(var(--bone),var(--bone))_right_bottom/13px_1px_no-repeat,linear-gradient(var(--bone),var(--bone))_right_bottom/1px_13px_no-repeat]"
+                />
+                <div className="relative flex items-center justify-between gap-3 font-mono text-[0.6rem] uppercase tracking-[0.14em]">
+                  <span className="text-ash">
+                    FILE {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <span className="text-blood-hot/85">SEALED</span>
+                </div>
+                <p className="relative mt-3 font-display text-xl uppercase leading-[1.08] text-bone sm:text-[1.38rem] sm:leading-[1.04]">
                   {name}
                 </p>
+                <div className="relative mt-3 flex items-center gap-2">
+                  <span className="shrink-0 font-mono text-[0.56rem] uppercase tracking-[0.12em] text-ash">
+                    LOC
+                  </span>
+                  <span
+                    aria-hidden
+                    className="relative h-3 border border-bone/10 bg-ash-deep before:absolute before:inset-0 before:bg-[linear-gradient(100deg,transparent_30%,rgba(230,225,214,0.06)_50%,transparent_70%)]"
+                    style={{ width: `${50 + ((index * 7) % 24)}%` }}
+                  />
+                </div>
               </div>
             ))}
           </div>
-          <p className="mt-5 font-display text-3xl uppercase leading-none text-blood-hot">
-            And many more.
+          <p className="mt-7 font-display text-3xl uppercase leading-none text-blood-hot">
+            And many more sealed.
           </p>
           <p className="mt-4 max-w-3xl font-mono text-xs uppercase leading-6 tracking-[0.04em] text-ash">
-            Exact route, coordinates, stop order, and full stories unlock after
-            purchase.
+            Exact route, coordinates, stop order, and the full story behind
+            every name unlock the moment you buy.
           </p>
         </div>
       </section>
