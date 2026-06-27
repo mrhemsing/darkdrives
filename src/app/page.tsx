@@ -132,7 +132,10 @@ export default function Home() {
                   <h3 className="mt-4 font-display text-5xl uppercase leading-[1.15] sm:text-6xl sm:leading-[1.15]">
                     It&apos;s all around you.
                   </h3>
-                  <p className="mb-8 mt-5 max-w-xl text-lg leading-8 text-bone-dim">
+                  <p
+                    className="mt-5 max-w-xl text-lg leading-8 text-bone-dim"
+                    style={{ marginBottom: "2rem" }}
+                  >
                     40+ real haunted spots, scattered across the whole city. The
                     full map and route come with the tour.
                   </p>
