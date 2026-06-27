@@ -78,12 +78,12 @@ export default function Home() {
           alt=""
           fill
           sizes="100vw"
-          className="pointer-events-none absolute inset-0 hidden h-full w-full object-cover object-center opacity-20 sm:block"
+          className="pointer-events-none absolute inset-0 hidden h-full w-full object-cover object-center opacity-[0.35] min-[840px]:block"
           loading="lazy"
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 hidden bg-[linear-gradient(180deg,rgba(10,9,8,0.88),rgba(10,9,8,0.72)_42%,rgba(10,9,8,0.9)),radial-gradient(circle_at_50%_22%,transparent_0,rgba(10,9,8,0.42)_58%)] sm:block"
+          className="pointer-events-none absolute inset-0 hidden bg-[linear-gradient(180deg,rgba(230,225,214,0.78),rgba(230,225,214,0.58)_42%,rgba(230,225,214,0.82)),radial-gradient(circle_at_50%_22%,transparent_0,rgba(230,225,214,0.34)_58%)] min-[840px]:block"
         />
         <div className="relative mx-auto max-w-7xl">
           <p className="font-mono text-xs uppercase tracking-[0.28em] text-sick">
