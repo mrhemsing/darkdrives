@@ -85,7 +85,7 @@ export const tours: Tour[] = [
     stopCountDisplay: "40+ real locations",
     locationCountDisplay: "40+ real locations",
     coverImage: "/images/saskatoon-night-road.svg",
-    trailerAudio: "/audio/dark-drives-hero-sample-mixed.mp3",
+    trailerAudio: "/audio/dark-drives-intro-demo-v2.mp3",
     categoryStats: [
       { category: "True crime", count: 9 },
       { category: "Hauntings", count: 11 },
