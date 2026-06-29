@@ -166,7 +166,7 @@ export function ProductSalesPage({ product }: { product: Tour }) {
                     Saskatoon preview file
                   </p>
                   <p className="mt-1 font-mono text-xs uppercase text-ash">
-                    01:07 intro demo / final audio asset slot
+                    01:04 intro demo / mastered audio asset
                   </p>
                 </div>
                 <div className="flex h-12 w-12 items-center justify-center rounded-full border border-blood bg-blood/20 text-blood-hot">
